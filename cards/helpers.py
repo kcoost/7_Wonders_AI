@@ -64,7 +64,6 @@ def read_cards_file(filename):
 			if c:
 				c.parse_chains(prebuilt, postbuilt)
 				cards.append(c)
-	print("Loaded %d cards" % ( len(cards)))
 	return cards
 
 
@@ -78,7 +77,6 @@ def calc_science_score(compass, gear, tablets):
 def find_best_score(compass, gear, tablets, choice):
 	if len(choice) == 0:
 		score = calc_science_score(compass, gear, tablets)
-		#print "%d %d %d -> %d" % (compass, gear, tablets, score)
 		return ((compass, gear, tablets), score)
 	scores = []
 	if SCIENCE_COMPASS in choice[0]:
@@ -117,7 +115,6 @@ def score_military(player, opponent, age):
 		points = [1,3,5][age]
 	elif my_strength < their_strength:
 		points = -1
-	#print "WAR: %s: %d %s %d -> %d\b" % (player.name, my_strength, opponent.name, their_strength, points)
 	return (my_strength, their_strength, points)
 
 def score_blue(player):

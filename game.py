@@ -73,7 +73,6 @@ class GameState:
 			west_player = self._get_west_player(i)
 			east_player = self._get_east_player(i)
 			deckid = (i + offset) % self.player_count
-			player.print_tableau()
 			# This loop is actually wrong.
 			# Everyone should choose the card they will play, server
 			# validates the move is legal, then each player plays the card
@@ -148,7 +147,6 @@ class GameState:
 			moneyscore = player.money / 3
 			yellowscore = helpers.score_yellow(player, west, east)
 			purplescore = helpers.score_purple(player, west, east)
-			player.print_tableau()
 			totalscore = bluescore + greenscore + redscore + moneyscore + yellowscore + purplescore
 			text = "Final score: Blue: %d, Green: %d, red: %d, yellow: %d, purple: %d, $: %d, total: %d" % (bluescore, greenscore, redscore, yellowscore, purplescore, moneyscore, totalscore)
 			self.logger.log_freetext(player.get_name() + " " + text)
