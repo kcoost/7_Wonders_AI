@@ -19,10 +19,8 @@ from players import *
 import logger
 
 def init_games():
-	global __all_cards
 	global __all_wonders
 
-	__all_cards = helpers.read_cards_file("card-descriptions.txt")
 	__all_wonders = Wonders.read_wonders_file("wonders.txt")
 
 class GameState:
@@ -39,7 +37,11 @@ class GameState:
 			self.players.append(Players.Player(name))
 			self.players[i].set_personality(persona())
 
+		cards = helpers.read_cards_file("card-descriptions.txt")
+		self.setup_age_cards(cards)
+
 	def setup_age_cards(self, cards):
+		self.logger.card_list = cards
 		age_1 = [c for c in cards if c.age == 1 and c.players <= self.player_count]
 		age_2 = [c for c in cards if c.age == 2 and c.players <= self.player_count]
 		age_3 = [c for c in cards if c.age == 3 and c.get_colour() != CARDS_PURPLE and c.players <= self.player_count]
@@ -155,7 +157,6 @@ class GameState:
 			totalscore = bluescore + greenscore + redscore + moneyscore + yellowscore + purplescore
 			text = "Final score: Blue: %d, Green: %d, red: %d, yellow: %d, purple: %d, $: %d, total: %d" % (bluescore, greenscore, redscore, yellowscore, purplescore, moneyscore, totalscore)
 			self.logger.log_freetext(player.get_name() + " " + text)
-			print(text)
 
 		logfile = open("logfile.txt", "w")
 		self.logger.dump(logfile)
@@ -166,8 +167,6 @@ init_games()
 # Bob = Personalities.StupidAI("Bob")
 # Charlie = Personalities.StupidAI("Charlie")
 game = GameState([("alice", Personalities.StupidAI), ("Bob", Personalities.StupidAI), ("Frank", Personalities.StupidAI)])
-game.logger.card_list = __all_cards
-game.setup_age_cards(__all_cards)
 game.game_loop()
 
 # test
@@ -178,12 +177,3 @@ with open("logfile.txt") as f:
 
 assert reference_game == game, "Game results differ from previous version"
 
-#p = game.players[0]
-#p.money = 10
-#p.tableau += [find_card(__all_cards, "quarry"), find_card(__all_cards, "clay pit"), find_card(__all_cards, "press")]
-#game.players[1].tableau += [find_card(__all_cards, "glassworks"), find_card(__all_cards, "sawmill"), find_card(__all_cards, "foundry")]
-
-#p.buy_card(find_card(__all_cards, "fortification"), game.players[1], game.players[2])
-
-#game.players[0].tableau += [find_card(__all_cards, "study"), find_card(__all_cards, "lodge"), find_card(__all_cards, "scientist guild")]
-#print helpers.score_science(game.players[0])
