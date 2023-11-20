@@ -1,5 +1,4 @@
 from common import *
-import cards
 
 class Logger:
 	def __init__(self):

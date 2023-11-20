@@ -1,6 +1,5 @@
 from collections import deque
 from common import *
-import cards
 
 
 class Player:
