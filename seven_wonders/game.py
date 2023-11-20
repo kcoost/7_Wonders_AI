@@ -14,13 +14,13 @@ from .helpers import (
 from .Players import Player
 import logger
 from .policy import StupidAI
+from .utils import CyclicList
 
 
 class GameState:
     def __init__(self, players: list[Player]):
         self.player_count = len(players)
-        self.players = players
-        self.ages = []
+        self.players = CyclicList(players)
         self.decks = [[]] * len(players)
         self.discard_pile = []
         self.logger = logger.Logger()
@@ -39,17 +39,17 @@ class GameState:
             p %= self.player_count
             cards = cards[1:]
 
-    def _get_west_player(self, playerid):
-        return self.players[(playerid + self.player_count - 1) % self.player_count]
+    def left_player(self, player_id):
+        return self.players[player_id - 1]
 
-    def _get_east_player(self, playerid):
-        return self.players[(playerid + 1) % self.player_count]
+    def right_player(self, player_id):
+        return self.players[player_id + 1]
 
     def play_turn(self, offset):
         for i in range(self.player_count):
             player = self.players[i]
-            west_player = self._get_west_player(i)
-            east_player = self._get_east_player(i)
+            west_player = self.left_player(i)
+            east_player = self.right_player(i)
             deckid = (i + offset) % self.player_count
             # This loop is actually wrong.
             # Everyone should choose the card they will play, server
@@ -105,8 +105,8 @@ class GameState:
 
             # score military
             for p in range(self.player_count):
-                west = self._get_west_player(p)
-                east = self._get_east_player(p)
+                west = self.left_player(p)
+                east = self.right_player(p)
                 player = self.players[p]
                 player_strength, opponent_strength, score = score_military(
                     player, west, age
@@ -132,8 +132,8 @@ class GameState:
                 self.players[p].military.append(score)
         for i in range(self.player_count):
             player = self.players[i]
-            west = self._get_west_player(i)
-            east = self._get_east_player(i)
+            west = self.left_player(i)
+            east = self.right_player(i)
             score = 0
             bluescore = score_blue(player)
             (
