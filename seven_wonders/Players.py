@@ -2,6 +2,7 @@ from collections import deque
 from common import *
 from .policy import Policy
 
+
 class Player:
     def __init__(self, name: str, policy: Policy):
         self.name = name
