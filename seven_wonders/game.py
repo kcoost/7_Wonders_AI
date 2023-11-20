@@ -1,8 +1,16 @@
+from pathlib import Path
 import random
 
 random.seed(0)
 from common import *
-from .helpers import read_cards_file, score_military, score_blue, score_science, score_yellow, score_purple
+from .helpers import (
+    init_decks,
+    score_military,
+    score_blue,
+    score_science,
+    score_yellow,
+    score_purple,
+)
 from .Players import Player
 import logger
 from .policy import StupidAI
@@ -17,35 +25,8 @@ class GameState:
         self.discard_pile = []
         self.logger = logger.Logger()
 
-        cards = read_cards_file("card-descriptions.txt")
-        self.setup_age_cards(cards)
-
-    def setup_age_cards(self, cards):
+        cards, self.ages = init_decks(self.player_count)
         self.logger.card_list = cards
-        age_1 = [c for c in cards if c.age == 1 and c.players <= self.player_count]
-        age_2 = [c for c in cards if c.age == 2 and c.players <= self.player_count]
-        age_3 = [
-            c
-            for c in cards
-            if c.age == 3
-            and c.get_colour() != CARDS_PURPLE
-            and c.players <= self.player_count
-        ]
-        purple = [
-            c
-            for c in cards
-            if c.age == 3
-            and c.get_colour() == CARDS_PURPLE
-            and c.players <= self.player_count
-        ]
-
-        random.shuffle(age_1)
-        random.shuffle(age_2)
-        random.shuffle(purple)
-        age_3 += purple[0 : self.player_count + 2]
-        random.shuffle(age_3)
-
-        self.ages = [age_1, age_2, age_3]
 
     def deal_age_cards(self, age):
         cards = self.ages[age][0:]
