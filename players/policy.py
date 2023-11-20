@@ -1,9 +1,6 @@
 from sys import stdin
-from common import *
-import cards
 
-
-class Personality:
+class Policy:
 	def __init__(self):
 		pass
 
@@ -11,17 +8,11 @@ class Personality:
 		pass
 
 
-class StupidAI(Personality):
-	def __init__(self):
-		pass
-
+class StupidAI(Policy):
 	def make_choice(self, options):
 		return 0
 
-class Human(Personality):
-	def __init__(self):
-		pass
-
+class Human(Policy):
 	def make_choice(self, options):
 		return int(stdin.readline())
 

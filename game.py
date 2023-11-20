@@ -5,6 +5,7 @@ from common import *
 from cards import helpers
 from players import *
 import logger
+from players.policy import StupidAI
 
 class GameState:
 	def __init__(self, players):
@@ -146,7 +147,7 @@ class GameState:
 # Alice = Personalities.StupidAI("Alice")
 # Bob = Personalities.StupidAI("Bob")
 # Charlie = Personalities.StupidAI("Charlie")
-game = GameState([("alice", Personalities.StupidAI), ("Bob", Personalities.StupidAI), ("Frank", Personalities.StupidAI)])
+game = GameState([("alice", StupidAI), ("Bob", StupidAI), ("Frank", StupidAI)])
 game.game_loop()
 
 # test
