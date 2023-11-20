@@ -1,9 +1,9 @@
 from collections import deque
 from common import *
-
+from .policy import Policy
 
 class Player:
-    def __init__(self, name):
+    def __init__(self, name: str, policy: Policy):
         self.name = name
         self.money = 3
         self.board = []  # all the players played cards
@@ -19,10 +19,7 @@ class Player:
         }
         self.west_trade_prices = self.east_trade_prices.copy()
         self.wonder = None
-        self.personality = None
-
-    def set_personality(self, persona):
-        self.personality = persona
+        self.policy = policy
 
     def get_name(self):
         return self.name
@@ -77,7 +74,7 @@ class Player:
             i += 1
         print("-=================-")
 
-        return options[self.personality.make_choice(options)]
+        return options[self.policy.make_choice(options)]
 
     def set_wonder(self, wonder):
         self.wonder = wonder

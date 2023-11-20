@@ -9,17 +9,13 @@ from .policy import StupidAI
 
 
 class GameState:
-    def __init__(self, players):
+    def __init__(self, players: list[Player]):
         self.player_count = len(players)
-        self.players = []
+        self.players = players
         self.ages = []
         self.decks = [[]] * len(players)
         self.discard_pile = []
         self.logger = logger.Logger()
-        for i in range(len(players)):
-            name, persona = players[i]
-            self.players.append(Player(name))
-            self.players[i].set_personality(persona())
 
         cards = read_cards_file("card-descriptions.txt")
         self.setup_age_cards(cards)
@@ -199,5 +195,9 @@ class GameState:
 
 
 def run_game():
-    game = GameState([("alice", StupidAI), ("Bob", StupidAI), ("Frank", StupidAI)])
+    Alice = Player("Alice", StupidAI())
+    Bob = Player("Bob", StupidAI())
+    Charlie = Player("Charlie", StupidAI())
+
+    game = GameState([Alice, Bob, Charlie])
     game.game_loop()
