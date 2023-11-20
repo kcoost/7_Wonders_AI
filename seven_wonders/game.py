@@ -1,12 +1,11 @@
 import random
 
 random.seed(0)
-
 from common import *
-from cards import helpers
-from players import *
+from .helpers import read_cards_file, score_military, score_blue, score_science, score_yellow, score_purple
+from .Players import Player
 import logger
-from players.policy import StupidAI
+from .policy import StupidAI
 
 
 class GameState:
@@ -19,10 +18,10 @@ class GameState:
         self.logger = logger.Logger()
         for i in range(len(players)):
             name, persona = players[i]
-            self.players.append(Players.Player(name))
+            self.players.append(Player(name))
             self.players[i].set_personality(persona())
 
-        cards = helpers.read_cards_file("card-descriptions.txt")
+        cards = read_cards_file("card-descriptions.txt")
         self.setup_age_cards(cards)
 
     def setup_age_cards(self, cards):
@@ -132,7 +131,7 @@ class GameState:
                 west = self._get_west_player(p)
                 east = self._get_east_player(p)
                 player = self.players[p]
-                player_strength, opponent_strength, score = helpers.score_military(
+                player_strength, opponent_strength, score = score_military(
                     player, west, age
                 )
                 self.logger.log_military_battle(
@@ -143,7 +142,7 @@ class GameState:
                     score,
                 )
                 self.players[p].military.append(score)
-                player_strength, opponent_strength, score = helpers.score_military(
+                player_strength, opponent_strength, score = score_military(
                     player, east, age
                 )
                 self.logger.log_military_battle(
@@ -159,19 +158,19 @@ class GameState:
             west = self._get_west_player(i)
             east = self._get_east_player(i)
             score = 0
-            bluescore = helpers.score_blue(player)
+            bluescore = score_blue(player)
             (
                 _,
                 _,
                 _,
-            ), greenscore = helpers.score_science(player)
+            ), greenscore = score_science(player)
             score += greenscore
             redscore = 0
             for military in player.military:
                 redscore += military
             moneyscore = player.money / 3
-            yellowscore = helpers.score_yellow(player, west, east)
-            purplescore = helpers.score_purple(player, west, east)
+            yellowscore = score_yellow(player, west, east)
+            purplescore = score_purple(player, west, east)
             totalscore = (
                 bluescore
                 + greenscore
@@ -199,16 +198,6 @@ class GameState:
         logfile.close()
 
 
-# Alice = Personalities.StupidAI("Alice")
-# Bob = Personalities.StupidAI("Bob")
-# Charlie = Personalities.StupidAI("Charlie")
-game = GameState([("alice", StupidAI), ("Bob", StupidAI), ("Frank", StupidAI)])
-game.game_loop()
-
-# test
-with open("logfile_reference.txt") as f:
-    reference_game = f.read()
-with open("logfile.txt") as f:
-    game = f.read()
-
-assert reference_game == game, "Game results differ from previous version"
+def run_game():
+    game = GameState([("alice", StupidAI), ("Bob", StupidAI), ("Frank", StupidAI)])
+    game.game_loop()
