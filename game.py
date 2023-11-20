@@ -18,11 +18,6 @@ from cards import helpers
 from players import *
 import logger
 
-def init_games():
-	global __all_wonders
-
-	__all_wonders = Wonders.read_wonders_file("wonders.txt")
-
 class GameState:
 	def __init__(self, players):
 
@@ -162,7 +157,6 @@ class GameState:
 		self.logger.dump(logfile)
 		logfile.close()
 
-init_games()
 # Alice = Personalities.StupidAI("Alice")
 # Bob = Personalities.StupidAI("Bob")
 # Charlie = Personalities.StupidAI("Charlie")
