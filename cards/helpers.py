@@ -11,6 +11,7 @@
 # KIND, either express or implied.
 
 import random
+random.seed(0)
 from collections import deque
 
 from common import *

@@ -11,6 +11,7 @@
 # KIND, either express or implied.
 
 import random
+random.seed(0)
 
 from common import *
 from cards import helpers
@@ -161,10 +162,21 @@ class GameState:
 		logfile.close()
 
 init_games()
+# Alice = Personalities.StupidAI("Alice")
+# Bob = Personalities.StupidAI("Bob")
+# Charlie = Personalities.StupidAI("Charlie")
 game = GameState([("alice", Personalities.StupidAI), ("Bob", Personalities.StupidAI), ("Frank", Personalities.StupidAI)])
 game.logger.card_list = __all_cards
 game.setup_age_cards(__all_cards)
 game.game_loop()
+
+# test
+with open("logfile_reference.txt") as f:
+	reference_game = f.read()
+with open("logfile.txt") as f:
+	game = f.read()
+
+assert reference_game == game, "Game results differ from previous version"
 
 #p = game.players[0]
 #p.money = 10
