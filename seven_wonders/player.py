@@ -1,32 +1,36 @@
 from collections import deque
-from common import *
 from .policy import Policy
-
+from .resources import Cost
+from .action import AvailableCards
+from card import Card
+from city import City
 
 class Player:
-    def __init__(self, name: str, policy: Policy):
+    def __init__(self, name: str, city: City, policy: Policy):
         self.name = name
-        self.money = 3
-        self.board = []  # all the players played cards
-        self.military = []  # war wins/losses
-        self.east_trade_prices = {
-            RESOURCE_WOOD: 2,
-            RESOURCE_ORE: 2,
-            RESOURCE_STONE: 2,
-            RESOURCE_BRICK: 2,
-            RESOURCE_GLASS: 2,
-            RESOURCE_LOOM: 2,
-            RESOURCE_PAPER: 2,
-        }
-        self.west_trade_prices = self.east_trade_prices.copy()
-        self.wonder = None
+        self.city = city
         self.policy = policy
 
-    def get_name(self):
-        return self.name
+        self.money = 3
+        self.military_wins = []
+        self.military_defeats = []
 
-    def get_cards(self):
-        return self.board
+
+
+        self.west_trade_prices = Cost()
+        self.east_trade_prices = Cost()
+
+    def actions(self, hand: list[Card]):
+        available_cards = AvailableCards()
+        for card in hand:
+            if self.city.is_affordable(card):
+                available_cards[card.name.replace(" ", "_")] = True
+
+    def resource_production(self):
+        pass
+
+    def options(self, hand: list[Card], west_city: City, east_city: City):
+        pass
 
     def play_hand(self, hand, west_player, east_player):
         """return the card and action done"""
@@ -54,7 +58,7 @@ class Player:
                 CARDS_RED: 4,
                 CARDS_GREEN: 5,
                 CARDS_PURPLE: 6,
-            }[x[1].get_colour()],
+            }[x[1].colour],
         )
         for o in options:
             actions = {

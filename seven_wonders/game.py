@@ -19,25 +19,32 @@ import logger
 from .policy import StupidAI
 from .utils import CyclicList
 
-class Decks:
-    def __init__(self, player_count: int, age_I_cards: list[Card], age_II_cards: list[Card], age_III_cards: list[Card]):
-        self.age_I_cards = age_I_cards
-        self.age_II_cards = age_II_cards
-        self.age_III_cards = age_III_cards
+class Deck:
+    def __init__(self, player_count: int, rotation_direction: str, cards: list[Card]):
+        self.rotation_direction = rotation_direction
+        initial_hand_size = len(cards) // player_count
+        self.hands = []
+        for i in range(len(cards) // initial_hand_size):
+            self.hands.append(cards[i*initial_hand_size:(i+1)*initial_hand_size])
 
-    def deal_hands(self, turn):
-        return []
+    def rotate_hands(self):
+        # TODO check logic
+        if self.rotation_direction == "clockwise":
+            self.hands = self.hands[1:] + [self.hands[0]]
+        else:
+            self.hands = [self.hands[-1]] + self.hands[:-1]
 
     def update_cards(self):
         # remove card
         # rotate
+        pass
 
 
 class GameState:
     def __init__(self, players: list[Player]):
         self.players = CyclicList(players)
         self.player_count = len(players)
-        self.decks = self.build_decks(self.player_count)
+        self.deck_I, self.deck_II, self.deck_III = self.build_decks(self.player_count)
         # self.discard_pile = []
         self.logger = logger.Logger()
 
@@ -66,7 +73,39 @@ class GameState:
         age_III_cards += purple_cards[:player_count + 2]
         random.shuffle(age_III_cards)
 
-        return Decks(player_count, age_I_cards, age_II_cards, age_III_cards)
+        return Deck(player_count, "clockwise", age_I_cards), Deck(player_count, "anti_clockwise", age_II_cards), Deck(player_count, "clockwise", age_III_cards)
+
+    def deal_hand(self, age: str, i: int):
+        hands = self.decks[age].deal_hands()
+        return hands[i]
+
+    def play_turn(self, age: str):
+        choices = []
+        deck = getattr(self, f"deck_{age}")
+        hands = deck.hands
+        for i in range(self.player_count):
+            hand = hands[i]
+            #west_city = self.players[(i + 1) % self.player_count].city
+            #east_city = self.players[(i - 1) % self.player_count].city
+            options = self.players[i].actions(hand)#, west_city, east_city)
+            choice = self.players[i].choose(options)
+            choices.append(choice)
+
+        deck.remove_cards([])
+        deck.rotate_hands()
+
+        self.update_deck()
+        for i in range(self.player_count):
+            self.players[i].update()
+
+    def update_scores(self):
+        pass
+
+    def play_game(self):
+        for age in ["I", "II", "III"]:
+            for turn in range(6):
+                self.play_turn(age)
+            self.update_scores()
 
     def deal_age_cards(self, age):
         cards = self.ages[age][0:]
@@ -79,22 +118,11 @@ class GameState:
             p %= self.player_count
             cards = cards[1:]
 
-    def left_player(self, player_id):
-        return self.players[player_id - 1]
-
-    def right_player(self, player_id):
-        return self.players[player_id + 1]
-
     def play_turn(self, offset):
         for i in range(self.player_count):
-            player = self.players[i]
-            west_player = self.left_player(i)
-            east_player = self.right_player(i)
+
             deckid = (i + offset) % self.player_count
-            # This loop is actually wrong.
-            # Everyone should choose the card they will play, server
-            # validates the move is legal, then each player plays the card
-            # Then each player adds the new card to their board
+
             while True:
                 action, card = player.play_hand(
                     self.decks[deckid], west_player, east_player

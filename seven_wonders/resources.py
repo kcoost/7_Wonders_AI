@@ -1,9 +1,8 @@
-from dataclasses import dataclass
-
+from dataclasses import dataclass, asdict
+from copy import copy
 
 @dataclass
 class Resources:
-    Coin: int = 0
     Clay: int = 0
     Ore: int = 0
     Stone: int = 0
@@ -12,9 +11,22 @@ class Resources:
     Loom: int = 0
     Papyrus: int = 0
 
+    def __le__(self, other):
+        assert isinstance(other, Resources)
+        for resource in asdict(self):
+            if self[resource] > other[resource]:
+                return False
+        return True
+
+    def __add__(self, other):
+        copy_self = copy(self)
+        for resource, value in asdict(other).items():
+            copy_self[resource] += value
+        return copy_self
+
+
 class Cost(Resources):
     ...
 
-class Yield(Resources):
-    total: int = 1
-    once: bool = False
+class Production(Resources):
+    ...
