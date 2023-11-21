@@ -75,6 +75,20 @@ class YellowCard(Card):
                 coins += east_city.count(self.effect["Receive coins"]["Condition"])
         return coins
 
+    def receive_victory_points(self, west_city: City, self_city: City, east_city: City):
+        if "Receive victory points" not in self.effect:
+            return 0
+
+        victory_points = 0
+        for direction in self.effect["Receive victory points"]["Directions"]:
+            if direction == "West":
+                victory_points += west_city.count(self.effect["Receive victory points"]["Condition"])
+            if direction == "Self":
+                victory_points += self_city.count(self.effect["Receive victory points"]["Condition"])
+            if direction == "East":
+                victory_points += east_city.count(self.effect["Receive victory points"]["Condition"])
+        return victory_points
+
     def reduced_trading_costs(self, west_city: City, east_city: City):
         if "Trade" not in self.effect:
             return []
@@ -90,6 +104,30 @@ class YellowCard(Card):
 
     def yield_resources(self):
         return self.resource_yields
+
+class PurpleCard(Card):
+    colour = "Purple"
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+        super().__init__(age, n_players, name, chains, cost)
+        self.effect = effect
+
+    def receive_victory_points(self, west_city: City, self_city: City, east_city: City):
+        if "Receive victory points" not in self.effect:
+            return 0
+
+        victory_points = 0
+        for direction in self.effect["Receive victory points"]["Directions"]:
+            if direction == "West":
+                victory_points += west_city.count(self.effect["Receive victory points"]["Condition"])
+            if direction == "Self":
+                victory_points += self_city.count(self.effect["Receive victory points"]["Condition"])
+            if direction == "East":
+                victory_points += east_city.count(self.effect["Receive victory points"]["Condition"])
+        return victory_points
+
+    def all_symbols(self):
+        return "Yield symbols" in self.effect["Effect"]
+
 
 #@dataclass
 class Card:
