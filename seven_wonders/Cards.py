@@ -1,6 +1,31 @@
+from typing import Any
 from common import *
+from dataclasses import dataclass
+from resources import Resources, Cost, Yield
+
+class Card:
+    def __init__(self, name: str, age: str, cost: dict[str, int], n_players: int):
+        self.name = name
+        self.age = age
+        self.cost = Cost(**cost)
+        self.n_players = n_players
+
+class BrownCard(Card):
+    colour = "Brown"
+    def __init__(self, name: str, age: str, cost: dict[str, int], n_players: int, effect: dict[str, Any]):
+        super().__init__(name, age, cost, n_players)
+
+        self.resource_yields = []
+        for resource, quantity in effect.items():
+            self.resource_yields.append(Resources(resource=quantity))
+
+    def yield_resources(self):
+        return self.resource_yields
 
 
+
+
+#@dataclass
 class Card:
     def __init__(self, name, age, cost, players):
         self.name = name
@@ -45,24 +70,18 @@ class Card:
         """Called when the card is played onto the table"""
         pass
 
-    def get_colour(self):
-        return ""
-
     def get_info(self):
         return ""
 
     def __repr__(self):
-        return "%s (%s) -> %s" % (self.name, self.get_colour(), self.get_info())
+        return "%s (%s) -> %s" % (self.name, self.colour, self.get_info())
 
     def get_name(self):
         return self.name
 
-    def get_cost(self):
-        return self.cost
-
     def get_cost_as_string(self):
         out = ""
-        for r in self.get_cost():
+        for r in self.cost:
             out += r
         return out
 
@@ -87,7 +106,7 @@ class Card:
             CARDS_YELLOW: "\033[1;33m",
             CARDS_BLUE: "\033[34m",
             CARDS_PURPLE: "\033[35m",
-        }[self.get_colour()]
+        }[self.colour]
 
     def pretty_print_name(self, with_info=True):
         if with_info:
@@ -98,6 +117,7 @@ class Card:
 
 
 class BrownCard(Card):
+    colour = CARDS_BROWN
     valid_resources = [RESOURCE_WOOD, RESOURCE_ORE, RESOURCE_STONE, RESOURCE_BRICK]
 
     def parse_infotext(self, text):
@@ -130,27 +150,20 @@ class BrownCard(Card):
         else:
             return 0
 
-    def get_colour(self):
-        return CARDS_BROWN
-
     def is_resource_card(self):
         return (True, True)
 
 
 class GreyCard(BrownCard):
+    colour = CARDS_GREY
     valid_resources = [RESOURCE_GLASS, RESOURCE_LOOM, RESOURCE_PAPER]
-
-    def get_colour(self):
-        return CARDS_GREY
 
 
 class BlueCard(Card):
+    colour = CARDS_BLUE
     def parse_infotext(self, text):
         self.points = int(text)
         return True
-
-    def get_colour(self):
-        return CARDS_BLUE
 
     def get_info(self):
         return "%d points" % (self.points)
@@ -160,6 +173,7 @@ class BlueCard(Card):
 
 
 class GreenCard(Card):
+    colour = CARDS_GREEN
     def parse_infotext(self, text):
         if text[0] in [SCIENCE_COMPASS, SCIENCE_GEAR, SCIENCE_TABLET]:
             self.group = text[0]
@@ -169,23 +183,18 @@ class GreenCard(Card):
     def get_info(self):
         return self.group
 
-    def get_colour(self):
-        return CARDS_GREEN
-
     def is_science_card(self):
         return True
 
 
 class RedCard(Card):
+    colour = CARDS_RED
     def parse_infotext(self, text):
         self.strength = int(text)
         return True
 
     def get_info(self):
         return "%d" % (self.strength)
-
-    def get_colour(self):
-        return CARDS_RED
 
     def get_strength(self):
         return self.strength
@@ -195,6 +204,7 @@ class RedCard(Card):
 
 
 class FooPlaceHolderCard(Card):
+    colour = "-----"
     def parse_infotext(self, text):
         self.text = text
         return True
@@ -247,15 +257,12 @@ class FooPlaceHolderCard(Card):
         # 	count = player.wonder.built_stages
         else:
             for c in player.get_cards():
-                if c.get_colour() == colour:
+                if c.colour == colour:
                     count += 1
         return count
 
     def get_info(self):
         return self.text
-
-    def get_colour(self):
-        return "-----"
 
 
 class TradeCardInfo:
@@ -274,8 +281,8 @@ class GainCardInfo:
 
 
 class YellowCard(FooPlaceHolderCard):
+    colour = CARDS_YELLOW
     def parse_infotext(self, text):
-        self.colour = CARDS_YELLOW
         # init the different things this card could be
         self.trade_card_info = None
         self.gain_card_info = None
@@ -290,10 +297,6 @@ class YellowCard(FooPlaceHolderCard):
             return self.parse_provider_card(text[len(INFOPREFIX_PROVIDER) :])
         else:
             return self.parse_gain_card(text)
-        return True
-
-    def get_colour(self):
-        return self.colour
 
     def play(self, player, east_player, west_player):
         if self.trade_card_info:
@@ -374,8 +377,7 @@ class YellowCard(FooPlaceHolderCard):
 
 
 class PurpleCard(FooPlaceHolderCard):
-    def get_colour(self):
-        return CARDS_PURPLE
+    colour = CARDS_PURPLE
 
     def gives_science(self):
         return False

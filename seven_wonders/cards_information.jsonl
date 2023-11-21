@@ -1,149 +1,22 @@
-{"Age": 1, "Name": "lumber yard", "N_players": 3, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "W"}
-{"Age": 1, "Name": "ore vein", "N_players": 3, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "O"}
-{"Age": 1, "Name": "clay pool", "N_players": 3, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "B"}
-{"Age": 1, "Name": "stone pit", "N_players": 3, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "S"}
-{"Age": 1, "Name": "timer yard", "N_players": 3, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "S/W"}
-{"Age": 1, "Name": "clay pit", "N_players": 3, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "B/O"}
-{"Age": 1, "Name": "loom", "N_players": 3, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "L"}
-{"Age": 1, "Name": "glassworks", "N_players": 3, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "G"}
-{"Age": 1, "Name": "press", "N_players": 3, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "P"}
-{"Age": 1, "Name": "east trading post", "N_players": 3, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "forum", "Text": "trade-${WOBS} >"}
-{"Age": 1, "Name": "west trading post", "N_players": 3, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "forum", "Text": "trade-${WOBS} <"}
-{"Age": 1, "Name": "marketplace", "N_players": 3, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "caravansery", "Text": "trade-${GLP} <>"}
-{"Age": 1, "Name": "altar", "N_players": 3, "Colour": "blue", "Cost": "-", "Prebuilt": "-", "Postbuilt": "temple", "Text": "2"}
-{"Age": 1, "Name": "theatre", "N_players": 3, "Colour": "blue", "Cost": "-", "Prebuilt": "-", "Postbuilt": "statue", "Text": "2"}
-{"Age": 1, "Name": "baths", "N_players": 3, "Colour": "blue", "Cost": "S", "Prebuilt": "-", "Postbuilt": "aqueduct", "Text": "3"}
-{"Age": 1, "Name": "stockade", "N_players": 3, "Colour": "red", "Cost": "W", "Prebuilt": "-", "Postbuilt": "-", "Text": "1"}
-{"Age": 1, "Name": "barracks", "N_players": 3, "Colour": "red", "Cost": "O", "Prebuilt": "-", "Postbuilt": "-", "Text": "1"}
-{"Age": 1, "Name": "guard tower", "N_players": 3, "Colour": "red", "Cost": "B", "Prebuilt": "-", "Postbuilt": "-", "Text": "1"}
-{"Age": 1, "Name": "apothecary", "N_players": 3, "Colour": "green", "Cost": "L", "Prebuilt": "-", "Postbuilt": "stables | dispensary", "Text": "C"}
-{"Age": 1, "Name": "workshop", "N_players": 3, "Colour": "green", "Cost": "G", "Prebuilt": "-", "Postbuilt": "archery range | laboratory", "Text": "G"}
-{"Age": 1, "Name": "scriptorium", "N_players": 3, "Colour": "green", "Cost": "P", "Prebuilt": "-", "Postbuilt": "courthouse | library", "Text": "T"}
-{"Age": 1, "Name": "lumber yard", "N_players": 4, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "W"}
-{"Age": 1, "Name": "ore vein", "N_players": 4, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "O"}
-{"Age": 1, "Name": "excavation", "N_players": 4, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "S/B"}
-{"Age": 1, "Name": "tavern", "N_players": 4, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "$$$$$"}
-{"Age": 1, "Name": "pawnshop", "N_players": 4, "Colour": "blue", "Cost": "-", "Prebuilt": "-", "Postbuilt": "aqueduct", "Text": "3"}
-{"Age": 1, "Name": "guard tower", "N_players": 4, "Colour": "red", "Cost": "B", "Prebuilt": "-", "Postbuilt": "-", "Text": "1"}
-{"Age": 1, "Name": "scriptorium", "N_players": 4, "Colour": "green", "Cost": "P", "Prebuilt": "-", "Postbuilt": "courthouse | library", "Text": "T"}
-{"Age": 1, "Name": "clay pool", "N_players": 5, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "B"}
-{"Age": 1, "Name": "stone pit", "N_players": 5, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "S"}
-{"Age": 1, "Name": "forest cave", "N_players": 5, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "W/O"}
-{"Age": 1, "Name": "tavern", "N_players": 5, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "$$$$$"}
-{"Age": 1, "Name": "altar", "N_players": 5, "Colour": "blue", "Cost": "-", "Prebuilt": "-", "Postbuilt": "temple", "Text": "2"}
-{"Age": 1, "Name": "barracks", "N_players": 5, "Colour": "red", "Cost": "O", "Prebuilt": "-", "Postbuilt": "-", "Text": "1"}
-{"Age": 1, "Name": "apothecary", "N_players": 5, "Colour": "green", "Cost": "L", "Prebuilt": "-", "Postbuilt": "stables | dispensary", "Text": "C"}
-{"Age": 1, "Name": "tree farm", "N_players": 6, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "W/B"}
-{"Age": 1, "Name": "mine", "N_players": 6, "Colour": "brown", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "S/O"}
-{"Age": 1, "Name": "loom", "N_players": 6, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "L"}
-{"Age": 1, "Name": "glassworks", "N_players": 6, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "G"}
-{"Age": 1, "Name": "press", "N_players": 6, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "P"}
-{"Age": 1, "Name": "marketplace", "N_players": 6, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "caravansery", "Text": "trade-${GLP} <>"}
-{"Age": 1, "Name": "theatre", "N_players": 6, "Colour": "blue", "Cost": "-", "Prebuilt": "-", "Postbuilt": "statue", "Text": "2"}
-{"Age": 1, "Name": "east trading post", "N_players": 7, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "forum", "Text": "trade-${WOBS} >"}
-{"Age": 1, "Name": "west trading post", "N_players": 7, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "forum", "Text": "trade-${WOBS} <"}
-{"Age": 1, "Name": "marketplace", "N_players": 7, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "caravansery", "Text": "trade-${GLP} <>"}
-{"Age": 1, "Name": "tavern", "N_players": 7, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "$$$$$"}
-{"Age": 1, "Name": "baths", "N_players": 7, "Colour": "blue", "Cost": "S", "Prebuilt": "-", "Postbuilt": "aqueduct", "Text": "3"}
-{"Age": 1, "Name": "pawnshop", "N_players": 7, "Colour": "blue", "Cost": "-", "Prebuilt": "-", "Postbuilt": "aqueduct", "Text": "3"}
-{"Age": 1, "Name": "stockade", "N_players": 7, "Colour": "red", "Cost": "W", "Prebuilt": "-", "Postbuilt": "-", "Text": "1"}
-{"Age": 2, "Name": "sawmill", "N_players": 3, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "WW"}
-{"Age": 2, "Name": "foundry", "N_players": 3, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "OO"}
-{"Age": 2, "Name": "brickyard", "N_players": 3, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "BB"}
-{"Age": 2, "Name": "quarry", "N_players": 3, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "SS"}
-{"Age": 2, "Name": "loom", "N_players": 3, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "L"}
-{"Age": 2, "Name": "glassworks", "N_players": 3, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "G"}
-{"Age": 2, "Name": "press", "N_players": 3, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "P"}
-{"Age": 2, "Name": "caravansery", "N_players": 3, "Colour": "yellow", "Cost": "WW", "Prebuilt": "marketplace", "Postbuilt": "lighthouse", "Text": "+resource{W/S/O/B}"}
-{"Age": 2, "Name": "forum", "N_players": 3, "Colour": "yellow", "Cost": "BB", "Prebuilt": "east trading post | west trading post", "Postbuilt": "haven", "Text": "+resource{G/L/P}"}
-{"Age": 2, "Name": "vineyard", "N_players": 3, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "${brown} <v>"}
-{"Age": 2, "Name": "temple", "N_players": 3, "Colour": "blue", "Cost": "WBG", "Prebuilt": "altar", "Postbuilt": "pantheon", "Text": "3"}
-{"Age": 2, "Name": "courthouse", "N_players": 3, "Colour": "blue", "Cost": "BBL", "Prebuilt": "scriptorium", "Postbuilt": "-", "Text": "4"}
-{"Age": 2, "Name": "statue", "N_players": 3, "Colour": "blue", "Cost": "OOW", "Prebuilt": "theatre", "Postbuilt": "gardens", "Text": "4"}
-{"Age": 2, "Name": "aqueduct", "N_players": 3, "Colour": "blue", "Cost": "SSS", "Prebuilt": "baths", "Postbuilt": "-", "Text": "5"}
-{"Age": 2, "Name": "stables", "N_players": 3, "Colour": "red", "Cost": "BWO", "Prebuilt": "apothecary", "Postbuilt": "-", "Text": "2"}
-{"Age": 2, "Name": "archery range", "N_players": 3, "Colour": "red", "Cost": "WWO", "Prebuilt": "workshop", "Postbuilt": "-", "Text": "2"}
-{"Age": 2, "Name": "walls", "N_players": 3, "Colour": "red", "Cost": "SSS", "Prebuilt": "-", "Postbuilt": "fortifications", "Text": "2"}
-{"Age": 2, "Name": "library", "N_players": 3, "Colour": "green", "Cost": "SSL", "Prebuilt": "scriptorium", "Postbuilt": "senate | university", "Text": "T"}
-{"Age": 2, "Name": "laboratory", "N_players": 3, "Colour": "green", "Cost": "BBP", "Prebuilt": "workshop", "Postbuilt": "siege workshop | observatory", "Text": "G"}
-{"Age": 2, "Name": "dispensary", "N_players": 3, "Colour": "green", "Cost": "OOG", "Prebuilt": "apothecary", "Postbuilt": "arena | lodge", "Text": "C"}
-{"Age": 2, "Name": "school", "N_players": 3, "Colour": "green", "Cost": "WP", "Prebuilt": "-", "Postbuilt": "academy | study", "Text": "T"}
-{"Age": 2, "Name": "sawmill", "N_players": 4, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "WW"}
-{"Age": 2, "Name": "foundry", "N_players": 4, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "OO"}
-{"Age": 2, "Name": "brickyard", "N_players": 4, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "BB"}
-{"Age": 2, "Name": "quarry", "N_players": 4, "Colour": "brown", "Cost": "$", "Prebuilt": "-", "Postbuilt": "-", "Text": "SS"}
-{"Age": 2, "Name": "bazaar", "N_players": 4, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "$${grey} <v>"}
-{"Age": 2, "Name": "dispensary", "N_players": 4, "Colour": "green", "Cost": "OOG", "Prebuilt": "apothecary", "Postbuilt": "arena | lodge", "Text": "C"}
-{"Age": 2, "Name": "training ground", "N_players": 4, "Colour": "red", "Cost": "OOW", "Prebuilt": "-", "Postbuilt": "circus", "Text": "2"}
-{"Age": 2, "Name": "loom", "N_players": 5, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "L"}
-{"Age": 2, "Name": "glassworks", "N_players": 5, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "G"}
-{"Age": 2, "Name": "press", "N_players": 5, "Colour": "grey", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "P"}
-{"Age": 2, "Name": "caravansery", "N_players": 5, "Colour": "yellow", "Cost": "WW", "Prebuilt": "marketplace", "Postbuilt": "lighthouse", "Text": "+resource{W/S/O/B}"}
-{"Age": 2, "Name": "courthouse", "N_players": 5, "Colour": "blue", "Cost": "BBL", "Prebuilt": "scriptorium", "Postbuilt": "-", "Text": "4"}
-{"Age": 2, "Name": "laboratory", "N_players": 5, "Colour": "green", "Cost": "BBP", "Prebuilt": "workshop", "Postbuilt": "siege workshop | observatory", "Text": "G"}
-{"Age": 2, "Name": "stables", "N_players": 5, "Colour": "red", "Cost": "BWO", "Prebuilt": "apothecary", "Postbuilt": "-", "Text": "2"}
-{"Age": 2, "Name": "caravansery", "N_players": 6, "Colour": "yellow", "Cost": "WW", "Prebuilt": "marketplace", "Postbuilt": "lighthouse", "Text": "+resource{W/S/O/B}"}
-{"Age": 2, "Name": "forum", "N_players": 6, "Colour": "yellow", "Cost": "BB", "Prebuilt": "east trading post | west trading post", "Postbuilt": "haven", "Text": "+resource{G/L/P}"}
-{"Age": 2, "Name": "vineyard", "N_players": 6, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "${brown} <v>"}
-{"Age": 2, "Name": "temple", "N_players": 6, "Colour": "blue", "Cost": "WBG", "Prebuilt": "altar", "Postbuilt": "pantheon", "Text": "3"}
-{"Age": 2, "Name": "library", "N_players": 6, "Colour": "green", "Cost": "SSL", "Prebuilt": "scriptorium", "Postbuilt": "senate | university", "Text": "T"}
-{"Age": 2, "Name": "archery range", "N_players": 6, "Colour": "red", "Cost": "WWO", "Prebuilt": "workshop", "Postbuilt": "-", "Text": "2"}
-{"Age": 2, "Name": "training ground", "N_players": 6, "Colour": "red", "Cost": "OOW", "Prebuilt": "-", "Postbuilt": "circus", "Text": "2"}
-{"Age": 2, "Name": "forum", "N_players": 7, "Colour": "yellow", "Cost": "BB", "Prebuilt": "east trading post | west trading post", "Postbuilt": "haven", "Text": "+resource{G/L/P}"}
-{"Age": 2, "Name": "bazaar", "N_players": 7, "Colour": "yellow", "Cost": "-", "Prebuilt": "-", "Postbuilt": "-", "Text": "$${grey} <v>"}
-{"Age": 2, "Name": "statue", "N_players": 7, "Colour": "blue", "Cost": "OOW", "Prebuilt": "theatre", "Postbuilt": "gardens", "Text": "4"}
-{"Age": 2, "Name": "aqueduct", "N_players": 7, "Colour": "blue", "Cost": "SSS", "Prebuilt": "baths", "Postbuilt": "-", "Text": "5"}
-{"Age": 2, "Name": "school", "N_players": 7, "Colour": "green", "Cost": "WP", "Prebuilt": "-", "Postbuilt": "academy | study", "Text": "T"}
-{"Age": 2, "Name": "walls", "N_players": 7, "Colour": "red", "Cost": "SSS", "Prebuilt": "-", "Postbuilt": "fortifications", "Text": "2"}
-{"Age": 2, "Name": "training ground", "N_players": 7, "Colour": "red", "Cost": "OOW", "Prebuilt": "-", "Postbuilt": "circus", "Text": "2"}
-{"Age": 3, "Name": "gardens", "N_players": 3, "Colour": "blue", "Cost": "BBW", "Prebuilt": "statue", "Postbuilt": "-", "Text": "5"}
-{"Age": 3, "Name": "senate", "N_players": 3, "Colour": "blue", "Cost": "WWSO", "Prebuilt": "library", "Postbuilt": "-", "Text": "6"}
-{"Age": 3, "Name": "town hall", "N_players": 3, "Colour": "blue", "Cost": "SSOG", "Prebuilt": "-", "Postbuilt": "-", "Text": "6"}
-{"Age": 3, "Name": "pantheon", "N_players": 3, "Colour": "blue", "Cost": "BBOGPL", "Prebuilt": "temple", "Postbuilt": "-", "Text": "7"}
-{"Age": 3, "Name": "palace", "N_players": 3, "Colour": "blue", "Cost": "SOWBGPL", "Prebuilt": "-", "Postbuilt": "-", "Text": "8"}
-{"Age": 3, "Name": "university", "N_players": 3, "Colour": "green", "Cost": "WWPG", "Prebuilt": "library", "Postbuilt": "-", "Text": "T"}
-{"Age": 3, "Name": "observatory", "N_players": 3, "Colour": "green", "Cost": "OOGL", "Prebuilt": "laboratory", "Postbuilt": "-", "Text": "G"}
-{"Age": 3, "Name": "lodge", "N_players": 3, "Colour": "green", "Cost": "BBPL", "Prebuilt": "dispensary", "Postbuilt": "-", "Text": "C"}
-{"Age": 3, "Name": "study", "N_players": 3, "Colour": "green", "Cost": "WPL", "Prebuilt": "school", "Postbuilt": "-", "Text": "G"}
-{"Age": 3, "Name": "academy", "N_players": 3, "Colour": "green", "Cost": "SSSG", "Prebuilt": "school", "Postbuilt": "-", "Text": "C"}
-{"Age": 3, "Name": "siege workshop", "N_players": 3, "Colour": "red", "Cost": "BBBW", "Prebuilt": "laboratory", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "fortification", "N_players": 3, "Colour": "red", "Cost": "OOOS", "Prebuilt": "walls", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "arsenal", "N_players": 3, "Colour": "red", "Cost": "OOWL", "Prebuilt": "-", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "arena", "N_players": 3, "Colour": "yellow", "Cost": "SSO", "Prebuilt": "dispensary", "Postbuilt": "-", "Text": "$$$V{yellow}"}
-{"Age": 3, "Name": "lighthouse", "N_players": 3, "Colour": "yellow", "Cost": "SG", "Prebuilt": "carvansery", "Postbuilt": "-", "Text": "$V{wonder}"}
-{"Age": 3, "Name": "haven", "N_players": 3, "Colour": "yellow", "Cost": "WOL", "Prebuilt": "forum", "Postbuilt": "-", "Text": "$V{brown}"}
-{"Age": 3, "Name": "workers guild", "N_players": 1, "Colour": "purple", "Cost": "OOBSW", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{brown} <>"}
-{"Age": 3, "Name": "craftsmens guild", "N_players": 1, "Colour": "purple", "Cost": "OOSS", "Prebuilt": "-", "Postbuilt": "-", "Text": "VV{grey} <>"}
-{"Age": 3, "Name": "shipowners guild", "N_players": 1, "Colour": "purple", "Cost": "WWWGP", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{brown | grey | purple}"}
-{"Age": 3, "Name": "traders guild", "N_players": 1, "Colour": "purple", "Cost": "GLP", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{yellow} <>"}
-{"Age": 3, "Name": "magistrates guild", "N_players": 1, "Colour": "purple", "Cost": "WWWSL", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{blue} <>"}
-{"Age": 3, "Name": "builders guild", "N_players": 1, "Colour": "purple", "Cost": "SSBBG", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{wonder} <v>"}
-{"Age": 3, "Name": "philosophers guild", "N_players": 1, "Colour": "purple", "Cost": "BBBPL", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{green} <>"}
-{"Age": 3, "Name": "scientist guild", "N_players": 1, "Colour": "purple", "Cost": "WWOOP", "Prebuilt": "-", "Postbuilt": "-", "Text": "+science{C / T / G}"}
-{"Age": 3, "Name": "spies guild", "N_players": 1, "Colour": "purple", "Cost": "BBBG", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{red} <>"}
-{"Age": 3, "Name": "strategists guild", "N_players": 1, "Colour": "purple", "Cost": "WWSL", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{war lose} <>"}
-{"Age": 3, "Name": "architects guild", "N_players": 1, "Colour": "purple", "Cost": "OOOBPL", "Prebuilt": "-", "Postbuilt": "-", "Text": "V{purple} <>"}
-{"Age": 3, "Name": "gardens", "N_players": 4, "Colour": "blue", "Cost": "BBW", "Prebuilt": "statue", "Postbuilt": "-", "Text": "5"}
-{"Age": 3, "Name": "university", "N_players": 4, "Colour": "green", "Cost": "WWPG", "Prebuilt": "library", "Postbuilt": "-", "Text": "T"}
-{"Age": 3, "Name": "arsenal", "N_players": 4, "Colour": "red", "Cost": "OOWL", "Prebuilt": "-", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "circus", "N_players": 4, "Colour": "red", "Cost": "SSSO", "Prebuilt": "training ground", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "haven", "N_players": 4, "Colour": "yellow", "Cost": "WOL", "Prebuilt": "forum", "Postbuilt": "-", "Text": "$V{brown}"}
-{"Age": 3, "Name": "chamber of commerce", "N_players": 4, "Colour": "yellow", "Cost": "BBP", "Prebuilt": "-", "Postbuilt": "-", "Text": "$$VV{grey}"}
-{"Age": 3, "Name": "senate", "N_players": 5, "Colour": "blue", "Cost": "WWSO", "Prebuilt": "library", "Postbuilt": "-", "Text": "6"}
-{"Age": 3, "Name": "town hall", "N_players": 5, "Colour": "blue", "Cost": "SSOG", "Prebuilt": "-", "Postbuilt": "-", "Text": "6"}
-{"Age": 3, "Name": "study", "N_players": 5, "Colour": "green", "Cost": "WPL", "Prebuilt": "school", "Postbuilt": "-", "Text": "G"}
-{"Age": 3, "Name": "siege workshop", "N_players": 5, "Colour": "red", "Cost": "BBBW", "Prebuilt": "laboratory", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "circus", "N_players": 5, "Colour": "red", "Cost": "SSSO", "Prebuilt": "training ground", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "arena", "N_players": 5, "Colour": "yellow", "Cost": "SSO", "Prebuilt": "dispensary", "Postbuilt": "-", "Text": "$$$V{yellow}"}
-{"Age": 3, "Name": "town hall", "N_players": 6, "Colour": "blue", "Cost": "SSOG", "Prebuilt": "-", "Postbuilt": "-", "Text": "6"}
-{"Age": 3, "Name": "pantheon", "N_players": 6, "Colour": "blue", "Cost": "BBOGPL", "Prebuilt": "temple", "Postbuilt": "-", "Text": "7"}
-{"Age": 3, "Name": "lodge", "N_players": 6, "Colour": "green", "Cost": "BBPL", "Prebuilt": "dispensary", "Postbuilt": "-", "Text": "C"}
-{"Age": 3, "Name": "circus", "N_players": 6, "Colour": "red", "Cost": "SSSO", "Prebuilt": "training ground", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "lighthouse", "N_players": 6, "Colour": "yellow", "Cost": "SG", "Prebuilt": "carvansery", "Postbuilt": "-", "Text": "$V{wonder}"}
-{"Age": 3, "Name": "chamber of commerce", "N_players": 6, "Colour": "yellow", "Cost": "BBP", "Prebuilt": "-", "Postbuilt": "-", "Text": "$$VV{grey}"}
-{"Age": 3, "Name": "palace", "N_players": 7, "Colour": "blue", "Cost": "SOWBGPL", "Prebuilt": "-", "Postbuilt": "-", "Text": "8"}
-{"Age": 3, "Name": "observatory", "N_players": 7, "Colour": "green", "Cost": "OOGL", "Prebuilt": "laboratory", "Postbuilt": "-", "Text": "G"}
-{"Age": 3, "Name": "academy", "N_players": 7, "Colour": "green", "Cost": "SSSG", "Prebuilt": "school", "Postbuilt": "-", "Text": "C"}
-{"Age": 3, "Name": "fortification", "N_players": 7, "Colour": "red", "Cost": "OOOS", "Prebuilt": "walls", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "arsenal", "N_players": 7, "Colour": "red", "Cost": "OOWL", "Prebuilt": "-", "Postbuilt": "-", "Text": "3"}
-{"Age": 3, "Name": "arena", "N_players": 7, "Colour": "yellow", "Cost": "SSO", "Prebuilt": "dispensary", "Postbuilt": "-", "Text": "$$$V{yellow}"}
+{"Age": "I", "Name": "Lumber yard", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1}}
+{"Age": "I", "Name": "Lumber yard", "N_players": 4, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1}}
+{"Age": "I", "Name": "Stone pit", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1}}
+{"Age": "I", "Name": "Stone pit", "N_players": 5, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1}}
+{"Age": "I", "Name": "Clay pool", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Clay pool", "N_players": 5, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Ore vein", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Ore vein", "N_players": 4, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Tree farm", "N_players": 6, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1, "Clay": 1}}
+{"Age": "I", "Name": "Excavation", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1, "Clay": 1}}
+{"Age": "I", "Name": "Clay pit", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Clay": 1, "Ore": 1}}
+{"Age": "I", "Name": "Timber yard", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1, "Wood": 1}}
+{"Age": "I", "Name": "Forest cave", "N_players": 5, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1, "Ore": 1}}
+{"Age": "I", "Name": "Mine", "N_players": 6, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1, "Stone": 1}}
+{"Age": "II", "Name": "Sawmill", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 2}}
+{"Age": "II", "Name": "Sawmill", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 2}}
+{"Age": "II", "Name": "Quarry", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 2}}
+{"Age": "II", "Name": "Quarry", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 2}}
+{"Age": "II", "Name": "Brickyard", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Clay": 2}}
+{"Age": "II", "Name": "Brickyard", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Clay": 2}}
+{"Age": "II", "Name": "Foundry", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 2}}
+{"Age": "II", "Name": "Foundry", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 2}}
