@@ -30,10 +30,17 @@ class GreyCard(ResourceCard):
     colour = "Grey"
 
 class BlueCard(Card):
+    colour = "Blue"
     def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
         super().__init__(age, n_players, name, chains, cost)
         self.victory_points = effect["Victory points"]
 
+class RedCard(Card):
+    colour = "Red"
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+        super().__init__(age, n_players, name, chains, cost)
+        self.shields = effect["Shields"]
+        assert self.age == self.shields
 
 #@dataclass
 class Card:

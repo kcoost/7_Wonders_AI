@@ -59,3 +59,29 @@
 {"Age": "III", "Name": "Palace", "N_players": 7, "Colour": "Blue", "Cost": {"Glass": 1, "Papyrus": 1, "Loom": 1, "Clay": 1, "Wood": 1, "Ore": 1, "Stone": 1}, "Chains": [], "Effect": {"Victory points": 8}}
 {"Age": "III", "Name": "Senate", "N_players": 3, "Colour": "Blue", "Cost": {"Ore": 1, "Stone": 1, "Wood": 2}, "Chains": ["Library"], "Effect": {"Victory points": 6}}
 {"Age": "III", "Name": "Senate", "N_players": 5, "Colour": "Blue", "Cost": {"Ore": 1, "Stone": 1, "Wood": 2}, "Chains": ["Library"], "Effect": {"Victory points": 6}}
+
+{"Age": "I", "Name": "Stockade", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 1}, "Chains": [], "Effect": {"Shields": 1}}
+{"Age": "I", "Name": "Stockade", "N_players": 7, "Colour": "Red", "Cost": {"Wood": 1}, "Chains": [], "Effect": {"Shields": 1}}
+{"Age": "I", "Name": "Barracks", "N_players": 3, "Colour": "Red", "Cost": {"Ore": 1}, "Chains": [], "Effect": {"Shields": 1}}
+{"Age": "I", "Name": "Barracks", "N_players": 5, "Colour": "Red", "Cost": {"Ore": 1}, "Chains": [], "Effect": {"Shields": 1}}
+{"Age": "I", "Name": "Guard tower", "N_players": 3, "Colour": "Red", "Cost": {"Clay": 1}, "Chains": [], "Effect": {"Shields": 1}}
+{"Age": "I", "Name": "Guard tower", "N_players": 4, "Colour": "Red", "Cost": {"Clay": 1}, "Chains": [], "Effect": {"Shields": 1}}
+{"Age": "II", "Name": "Walls", "N_players": 3, "Colour": "Red", "Cost": {"Stone": 3}, "Chains": [], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Walls", "N_players": 7, "Colour": "Red", "Cost": {"Stone": 3}, "Chains": [], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Training ground", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 1, "Ore": 2}, "Chains": [], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Training ground", "N_players": 6, "Colour": "Red", "Cost": {"Wood": 1, "Ore": 2}, "Chains": [], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Training ground", "N_players": 7, "Colour": "Red", "Cost": {"Wood": 1, "Ore": 2}, "Chains": [], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Stables", "N_players": 3, "Colour": "Red", "Cost": {"Ore": 1, "Clay": 1, "Wood": 1}, "Chains": ["Apothecary"], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Stables", "N_players": 5, "Colour": "Red", "Cost": {"Ore": 1, "Clay": 1, "Wood": 1}, "Chains": ["Apothecary"], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Archery Range", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 2, "Ore": 1}, "Chains": ["Workshop"], "Effect": {"Shields": 2}}
+{"Age": "II", "Name": "Archery Range", "N_players": 6, "Colour": "Red", "Cost": {"Wood": 2, "Ore": 1}, "Chains": ["Workshop"], "Effect": {"Shields": 2}}
+{"Age": "III", "Name": "Fortifications", "N_players": 3, "Colour": "Red", "Cost": {"Stone": 1, "Ore": 3}, "Chains": ["Walls"], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Fortifications", "N_players": 7, "Colour": "Red", "Cost": {"Stone": 1, "Ore": 3}, "Chains": ["Walls"], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Circus", "N_players": 4, "Colour": "Red", "Cost": {"Stone": 3, "Ore": 1}, "Chains": ["Training ground"], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Circus", "N_players": 5, "Colour": "Red", "Cost": {"Stone": 3, "Ore": 1}, "Chains": ["Training ground"], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Circus", "N_players": 6, "Colour": "Red", "Cost": {"Stone": 3, "Ore": 1}, "Chains": ["Training ground"], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Arsenal", "N_players": 3, "Colour": "Red", "Cost": {"Ore": 1, "Wood": 2, "Loom": 1}, "Chains": [], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Arsenal", "N_players": 4, "Colour": "Red", "Cost": {"Ore": 1, "Wood": 2, "Loom": 1}, "Chains": [], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Arsenal", "N_players": 7, "Colour": "Red", "Cost": {"Ore": 1, "Wood": 2, "Loom": 1}, "Chains": [], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Siege workshop", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 1, "Clay": 3}, "Chains": ["Laboratory"], "Effect": {"Shields": 3}}
+{"Age": "III", "Name": "Siege workshop", "N_players": 5, "Colour": "Red", "Cost": {"Wood": 1, "Clay": 3}, "Chains": ["Laboratory"], "Effect": {"Shields": 3}}
