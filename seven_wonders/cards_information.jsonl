@@ -84,7 +84,6 @@
 {"Age": "III", "Name": "Arsenal", "N_players": 7, "Colour": "Red", "Cost": {"Ore": 1, "Wood": 2, "Loom": 1}, "Chains": [], "Effect": {"Shields": 3}}
 {"Age": "III", "Name": "Siege workshop", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 1, "Clay": 3}, "Chains": ["Laboratory"], "Effect": {"Shields": 3}}
 {"Age": "III", "Name": "Siege workshop", "N_players": 5, "Colour": "Red", "Cost": {"Wood": 1, "Clay": 3}, "Chains": ["Laboratory"], "Effect": {"Shields": 3}}
-
 {"Age": "I", "Name": "Apothecary", "N_players": 3, "Colour": "Green", "Cost": {"Loom": 1}, "Chains": [], "Effect": {"Symbol": "Sextant"}}
 {"Age": "I", "Name": "Apothecary", "N_players": 5, "Colour": "Green", "Cost": {"Loom": 1}, "Chains": [], "Effect": {"Symbol": "Sextant"}}
 {"Age": "I", "Name": "Workshop", "N_players": 3, "Colour": "Green", "Cost": {"Glass": 1}, "Chains": [], "Effect": {"Symbol": "Cogwheel"}}
@@ -109,7 +108,6 @@
 {"Age": "III", "Name": "Academy", "N_players": 7, "Colour": "Green", "Cost": {"Stone": 3, "Glass": 1}, "Chains": ["School"], "Effect": {"Symbol": "Sextant"}}
 {"Age": "III", "Name": "Study", "N_players": 3, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1, "Loom": 1}, "Chains": ["School"], "Effect": {"Symbol": "Cogwheel"}}
 {"Age": "III", "Name": "Study", "N_players": 5, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1, "Loom": 1}, "Chains": ["School"], "Effect": {"Symbol": "Cogwheel"}}
-
 {"Age": "I", "Name": "Tavern", "N_players": 3, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 5}}}
 {"Age": "I", "Name": "Tavern", "N_players": 5, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 5}}}
 {"Age": "I", "Name": "Tavern", "N_players": 7, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 5}}}

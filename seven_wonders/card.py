@@ -1,6 +1,5 @@
 from typing import Any
-from resources import Resources, Cost
-from city import City
+from .resources import Resources, Cost
 
 
 class Card:
@@ -31,12 +30,9 @@ class ResourceCard(Card):
     ):
         super().__init__(age, n_players, name, chains, cost)
 
-        self.resource_yields = []
+        self.resource_production = []
         for resource, quantity in effect.items():
-            self.resource_yields.append(Resources(**{resource: quantity}))
-
-    def yield_resources(self):
-        return self.resource_yields
+            self.resource_production.append(Resources(**{resource: quantity}))
 
 
 class BrownCard(ResourceCard):
@@ -86,7 +82,6 @@ class RedCard(Card):
     ):
         super().__init__(age, n_players, name, chains, cost)
         self.shields = effect["Shields"]
-        assert self.age == self.shields
 
     def __repr__(self):
         return f"\033[31m{self.name}"
@@ -131,7 +126,7 @@ class YellowCard(Card):
             for resource in effect["Yield resources"]:
                 self.resource_yields.append(Resources(**{resource: 1}))
 
-    def receive_coins(self, west_city: City, self_city: City, east_city: City):
+    def receive_coins(self, west_city, self_city, east_city):
         if "Receive coins" not in self.effect:
             return 0
 
@@ -148,7 +143,7 @@ class YellowCard(Card):
                 coins += east_city.count(self.effect["Receive coins"]["Condition"])
         return coins
 
-    def receive_victory_points(self, west_city: City, self_city: City, east_city: City):
+    def receive_victory_points(self, west_city, self_city, east_city):
         if "Receive victory points" not in self.effect:
             return 0
 
@@ -168,7 +163,7 @@ class YellowCard(Card):
                 )
         return victory_points
 
-    def reduced_trading_costs(self, west_city: City, east_city: City):
+    def reduced_trading_costs(self, west_city, east_city):
         if "Trade" not in self.effect:
             return []
 
@@ -203,7 +198,7 @@ class PurpleCard(Card):
         super().__init__(age, n_players, name, chains, cost)
         self.effect = effect
 
-    def receive_victory_points(self, west_city: City, self_city: City, east_city: City):
+    def receive_victory_points(self, west_city, self_city, east_city):
         if "Receive victory points" not in self.effect:
             return 0
 
@@ -231,13 +226,13 @@ class PurpleCard(Card):
 
 
 def build_card(
-    age: str,
-    n_players: int,
-    colour: str,
-    name: str,
-    chains: list[str],
-    cost: dict[str, int],
-    effect: dict[str, int],
+    Age: str,
+    N_players: int,
+    Colour: str,
+    Name: str,
+    Chains: list[str],
+    Cost: dict[str, int],
+    Effect: dict[str, int],
 ):
     cards = {
         "Brown": BrownCard,
@@ -248,4 +243,4 @@ def build_card(
         "Yellow": YellowCard,
         "Purple": PurpleCard,
     }
-    return cards[colour](age, n_players, name, chains, cost, effect)
+    return cards[Colour](Age, N_players, Name, Chains, Cost, Effect)

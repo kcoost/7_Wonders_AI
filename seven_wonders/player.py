@@ -2,8 +2,8 @@ from collections import deque
 from .policy import Policy
 from .resources import Cost
 from .action import AvailableCards
-from card import Card
-from city import City
+from .card import Card
+from .city import City
 
 class Player:
     def __init__(self, name: str, city: City, policy: Policy):
@@ -21,15 +21,20 @@ class Player:
         self.east_trade_prices = Cost()
 
     def actions(self, hand: list[Card]):
-        available_cards = AvailableCards()
+        available_cards = []
+
         for card in hand:
             if self.city.is_affordable(card):
-                available_cards[card.name.replace(" ", "_")] = True
+                available_cards.append(card.name.replace(" ", "_"))
+        return AvailableCards(**{c: True for c in available_cards})
+
+    def make_choice(self, available_cards: list[Card]):
+        return self.policy.make_choice(available_cards)
+
+    def play_card(self, action, card):
+        print(action)
 
     def resource_production(self):
-        pass
-
-    def options(self, hand: list[Card], west_city: City, east_city: City):
         pass
 
     def play_hand(self, hand, west_player, east_player):

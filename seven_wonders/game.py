@@ -1,23 +1,15 @@
-from pathlib import Path
 import random
-
 import jsonlines
-from .cards import Card, build_card
-
-random.seed(0)
-from common import *
-from .helpers import (
-    init_decks,
-    score_military,
-    score_blue,
-    score_science,
-    score_yellow,
-    score_purple,
-)
-from .Players import Player
 import logger
-from .policy import StupidAI
+
+from pathlib import Path
+
+from .card import Card, build_card
+from .policy import RandomChoice
 from .utils import CyclicList
+from .player import Player
+from .city import City
+
 
 class Deck:
     def __init__(self, player_count: int, rotation_direction: str, cards: list[Card]):
@@ -34,10 +26,10 @@ class Deck:
         else:
             self.hands = [self.hands[-1]] + self.hands[:-1]
 
-    def update_cards(self):
-        # remove card
-        # rotate
-        pass
+    def remove_cards(self, cards: list[Card]):
+        for i, card in enumerate(cards):
+            pass
+            #self.hands[i].pop(card)
 
 
 class GameState:
@@ -75,28 +67,24 @@ class GameState:
 
         return Deck(player_count, "clockwise", age_I_cards), Deck(player_count, "anti_clockwise", age_II_cards), Deck(player_count, "clockwise", age_III_cards)
 
-    def deal_hand(self, age: str, i: int):
-        hands = self.decks[age].deal_hands()
-        return hands[i]
-
     def play_turn(self, age: str):
-        choices = []
+        played_cards = []
         deck = getattr(self, f"deck_{age}")
         hands = deck.hands
         for i in range(self.player_count):
             hand = hands[i]
             #west_city = self.players[(i + 1) % self.player_count].city
             #east_city = self.players[(i - 1) % self.player_count].city
-            options = self.players[i].actions(hand)#, west_city, east_city)
-            choice = self.players[i].choose(options)
-            choices.append(choice)
+            available_cards = self.players[i].actions(hand)#, west_city, east_city)
+            action, played_card = self.players[i].make_choice(available_cards)
+            played_cards.append(played_card)
+        print("Cards played:", played_cards)
 
-        deck.remove_cards([])
+        deck.remove_cards(played_cards)
         deck.rotate_hands()
 
-        self.update_deck()
-        for i in range(self.player_count):
-            self.players[i].update()
+        for i, played_card in enumerate(played_cards):
+            self.players[i].play_card(action, played_card)
 
     def update_scores(self):
         pass
@@ -107,57 +95,8 @@ class GameState:
                 self.play_turn(age)
             self.update_scores()
 
-    def deal_age_cards(self, age):
-        cards = self.ages[age][0:]
-        p = 0
-        for i in range(self.player_count):
-            self.decks[i] = []
-        while len(cards):
-            self.decks[p].append(cards[0])
-            p += 1
-            p %= self.player_count
-            cards = cards[1:]
-
-    def play_turn(self, offset):
-        for i in range(self.player_count):
-
-            deckid = (i + offset) % self.player_count
-
-            while True:
-                action, card = player.play_hand(
-                    self.decks[deckid], west_player, east_player
-                )
-                if action == ACTION_PLAYCARD:
-                    can_buy = False
-                    # see if the player can buy the card
-                    if player.can_build_with_chain(card):
-                        can_buy = True
-                        self.logger.log_buy_card_with_chain(player, card)
-                    else:
-                        buy_options = player.buy_card(card, west_player, east_player)
-                        if len(buy_options) == 0:
-                            continue
-                        self.logger.log_buy_card(player, card, buy_options[0])
-                        can_buy = True
-                        player.money -= buy_options[0].total_cost
-                        east_player.money += buy_options[0].east_cost
-                        west_player.money += buy_options[0].west_cost
-                    if can_buy:
-                        card.play(player, west_player, east_player)
-                        player.get_cards().append(card)
-                        break
-                elif action == ACTION_DISCARD:
-                    self.logger.log_action(player, action, card)
-                    self.discard_pile.append(card)
-                    player.money += 3
-                    break
-                elif action == ACTION_STAGEWONDER:
-                    self.logger.log_action(player, action, card)
-                    # make sure we can do that
-                    break
-            self.decks[deckid].remove(card)
-
     def get_score(self):
+        return
         for i in range(self.player_count):
             player = self.players[i]
             west = self.left_player(i)
@@ -192,58 +131,11 @@ class GameState:
             )
             self.logger.log_freetext(player.get_name() + " " + text)
 
-    def game_loop(self):
-        for age in range(3):
-            self.logger.log_age_header(age)
-            self.deal_age_cards(age)
-            offset = 0
-            while len(self.decks[0]) > 1:
-                self.play_turn(offset)
-                offset = (
-                    offset + [1, self.player_count - 1, 1][age]
-                ) % self.player_count
-            # everyone discards the last card
-            for p in range(self.player_count):
-                self.discard_pile.append(self.decks[p][0])
-
-            # score military
-            for p in range(self.player_count):
-                west = self.left_player(p)
-                east = self.right_player(p)
-                player = self.players[p]
-                player_strength, opponent_strength, score = score_military(
-                    player, west, age
-                )
-                self.logger.log_military_battle(
-                    player.get_name(),
-                    player_strength,
-                    west.get_name(),
-                    opponent_strength,
-                    score,
-                )
-                self.players[p].military.append(score)
-                player_strength, opponent_strength, score = score_military(
-                    player, east, age
-                )
-                self.logger.log_military_battle(
-                    player.get_name(),
-                    player_strength,
-                    east.get_name(),
-                    opponent_strength,
-                    score,
-                )
-                self.players[p].military.append(score)
-        self.get_score()
-
-        logfile = open("logfile.txt", "w")
-        self.logger.dump(logfile)
-        logfile.close()
-
 
 def run_game():
-    Alice = Player("Alice", StupidAI())
-    Bob = Player("Bob", StupidAI())
-    Charlie = Player("Charlie", StupidAI())
+    Alice = Player("Alice", City(), RandomChoice())
+    Bob = Player("Bob", City(), RandomChoice())
+    Charlie = Player("Charlie", City(), RandomChoice())
 
     game = GameState([Alice, Bob, Charlie])
-    game.game_loop()
+    game.play_game()

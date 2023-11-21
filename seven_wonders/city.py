@@ -1,11 +1,11 @@
 from itertools import product
-from resources import Production
-from card import Card
+from .resources import Production
+from .card import Card
 
 class City:
     def __init__(self):
         self.played_cards = []
-        self.resource_production = [Production(clay=1)]
+        self.resource_production = [Production(Clay=1)]
 
     def update_resource_production(self, card: Card):
         assert card.colour in ["Brown", "Grey", "Yellow"]

@@ -3,6 +3,7 @@ from copy import copy
 
 @dataclass
 class Resources:
+    Coin: int = 0
     Clay: int = 0
     Ore: int = 0
     Stone: int = 0
@@ -10,6 +11,9 @@ class Resources:
     Glass: int = 0
     Loom: int = 0
     Papyrus: int = 0
+
+    def __getitem__(self, item):
+        return getattr(self, item)
 
     def __le__(self, other):
         assert isinstance(other, Resources)
