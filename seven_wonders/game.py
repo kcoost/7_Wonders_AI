@@ -1,6 +1,9 @@
 from pathlib import Path
 import random
 
+import jsonlines
+from .cards import Card, build_card
+
 random.seed(0)
 from common import *
 from .helpers import (
@@ -16,17 +19,54 @@ import logger
 from .policy import StupidAI
 from .utils import CyclicList
 
+class Decks:
+    def __init__(self, player_count: int, age_I_cards: list[Card], age_II_cards: list[Card], age_III_cards: list[Card]):
+        self.age_I_cards = age_I_cards
+        self.age_II_cards = age_II_cards
+        self.age_III_cards = age_III_cards
+
+    def deal_hands(self, turn):
+        return []
+
+    def update_cards(self):
+        # remove card
+        # rotate
+
 
 class GameState:
     def __init__(self, players: list[Player]):
-        self.player_count = len(players)
         self.players = CyclicList(players)
-        self.decks = [[]] * len(players)
-        self.discard_pile = []
+        self.player_count = len(players)
+        self.decks = self.build_decks(self.player_count)
+        # self.discard_pile = []
         self.logger = logger.Logger()
 
-        cards, self.ages = init_decks(self.player_count)
-        self.logger.card_list = cards
+    @staticmethod
+    def build_decks(player_count):
+        age_I_cards = []
+        age_II_cards = []
+        age_III_cards = []
+        purple_cards = []
+        with jsonlines.open(Path(__file__).parent / "cards_information.jsonl") as file:
+            for card_data in file:
+                if player_count > card_data["N_players"]:
+                    continue
+                if card_data["Age"] == "I":
+                    age_I_cards.append(build_card(**card_data))
+                elif card_data["Age"] == "II":
+                    age_II_cards.append(build_card(**card_data))
+                elif card_data["Colour"] == "Purple":
+                    purple_cards.append(build_card(**card_data))
+                elif card_data["Age"] == "III":
+                    age_III_cards.append(build_card(**card_data))
+
+        random.shuffle(age_I_cards)
+        random.shuffle(age_II_cards)
+        random.shuffle(purple_cards)
+        age_III_cards += purple_cards[:player_count + 2]
+        random.shuffle(age_III_cards)
+
+        return Decks(player_count, age_I_cards, age_II_cards, age_III_cards)
 
     def deal_age_cards(self, age):
         cards = self.ages[age][0:]
@@ -89,6 +129,41 @@ class GameState:
                     break
             self.decks[deckid].remove(card)
 
+    def get_score(self):
+        for i in range(self.player_count):
+            player = self.players[i]
+            west = self.left_player(i)
+            east = self.right_player(i)
+            bluescore = score_blue(player)
+            _, greenscore = score_science(player)
+            redscore = 0
+            for military in player.military:
+                redscore += military
+            moneyscore = player.money / 3
+            yellowscore = score_yellow(player, west, east)
+            purplescore = score_purple(player, west, east)
+            totalscore = (
+                bluescore
+                + greenscore
+                + redscore
+                + moneyscore
+                + yellowscore
+                + purplescore
+            )
+            text = (
+                "Final score: Blue: %d, Green: %d, red: %d, yellow: %d, purple: %d, $: %d, total: %d"
+                % (
+                    bluescore,
+                    greenscore,
+                    redscore,
+                    yellowscore,
+                    purplescore,
+                    moneyscore,
+                    totalscore,
+                )
+            )
+            self.logger.log_freetext(player.get_name() + " " + text)
+
     def game_loop(self):
         for age in range(3):
             self.logger.log_age_header(age)
@@ -130,45 +205,7 @@ class GameState:
                     score,
                 )
                 self.players[p].military.append(score)
-        for i in range(self.player_count):
-            player = self.players[i]
-            west = self.left_player(i)
-            east = self.right_player(i)
-            score = 0
-            bluescore = score_blue(player)
-            (
-                _,
-                _,
-                _,
-            ), greenscore = score_science(player)
-            score += greenscore
-            redscore = 0
-            for military in player.military:
-                redscore += military
-            moneyscore = player.money / 3
-            yellowscore = score_yellow(player, west, east)
-            purplescore = score_purple(player, west, east)
-            totalscore = (
-                bluescore
-                + greenscore
-                + redscore
-                + moneyscore
-                + yellowscore
-                + purplescore
-            )
-            text = (
-                "Final score: Blue: %d, Green: %d, red: %d, yellow: %d, purple: %d, $: %d, total: %d"
-                % (
-                    bluescore,
-                    greenscore,
-                    redscore,
-                    yellowscore,
-                    purplescore,
-                    moneyscore,
-                    totalscore,
-                )
-            )
-            self.logger.log_freetext(player.get_name() + " " + text)
+        self.get_score()
 
         logfile = open("logfile.txt", "w")
         self.logger.dump(logfile)

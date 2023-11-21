@@ -43,13 +43,13 @@ class RedCard(Card):
 
 class GreenCard(Card):
     colour = "Green"
-    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, str]):
         super().__init__(age, n_players, name, chains, cost)
         self.symbol = effect["Symbol"]
 
 class YellowCard(Card):
     colour = "Yellow"
-    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, Any]):
         super().__init__(age, n_players, name, chains, cost)
 
         self.effect = effect
@@ -107,7 +107,7 @@ class YellowCard(Card):
 
 class PurpleCard(Card):
     colour = "Purple"
-    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, Any]):
         super().__init__(age, n_players, name, chains, cost)
         self.effect = effect
 
@@ -128,6 +128,23 @@ class PurpleCard(Card):
     def all_symbols(self):
         return "Yield symbols" in self.effect["Effect"]
 
+def build_card(age: str, n_players: int, colour: str, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+    if colour == "Brown":
+        return BrownCard(age, n_players, name, chains, cost, effect)
+    elif colour == "Grey":
+        return GreyCard(age, n_players, name, chains, cost, effect)
+    elif colour == "Blue":
+        return BlueCard(age, n_players, name, chains, cost, effect)
+    elif colour == "Red":
+        return RedCard(age, n_players, name, chains, cost, effect)
+    elif colour == "Green":
+        return GreenCard(age, n_players, name, chains, cost, effect)
+    elif colour == "Yellow":
+        return YellowCard(age, n_players, name, chains, cost, effect)
+    elif colour == "Purple":
+        return PurpleCard(age, n_players, name, chains, cost, effect)
+    else:
+        raise ValueError(f"Invalid colour {colour}")
 
 #@dataclass
 class Card:
