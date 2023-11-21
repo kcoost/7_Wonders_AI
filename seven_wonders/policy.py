@@ -1,4 +1,4 @@
-from sys import stdin
+import random
 
 
 class Policy:
@@ -9,11 +9,6 @@ class Policy:
         pass
 
 
-class StupidAI(Policy):
+class RandomChoice(Policy):
     def make_choice(self, options):
-        return 0
-
-
-class Human(Policy):
-    def make_choice(self, options):
-        return int(stdin.readline())
+        return random.randint(0, len(options)-1)
