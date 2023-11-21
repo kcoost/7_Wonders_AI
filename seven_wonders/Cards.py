@@ -2,7 +2,6 @@ from typing import Any
 from common import *
 from dataclasses import dataclass
 from resources import Resources, Cost, Yield
-{"Age": "I", "Name": "Loom", "N_players": 6, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Loom": 1}}
 
 class Card:
     def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int]):
@@ -47,6 +46,50 @@ class GreenCard(Card):
     def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
         super().__init__(age, n_players, name, chains, cost)
         self.symbol = effect["Symbol"]
+
+class YellowCard(Card):
+    colour = "Yellow"
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+        super().__init__(age, n_players, name, chains, cost)
+
+        self.effect = effect
+        self.resource_yields = []
+        if "Yield resources" in self.effect:
+            for resource in effect["Yield resources"]:
+                self.resource_yields.append(Resources(resource=1))
+
+    def receive_coins(self, west_city: City, self_city: City, east_city: City):
+        if "Receive coins" not in self.effect:
+            return 0
+
+        if "condition" not in self.effect["Receive coins"]:
+            return self.effect["Receive coins"]["Amount"]
+
+        coins = 0
+        for direction in self.effect["Receive coins"]["Directions"]:
+            if direction == "West":
+                coins += west_city.count(self.effect["Receive coins"]["Condition"])
+            if direction == "Self":
+                coins += self_city.count(self.effect["Receive coins"]["Condition"])
+            if direction == "East":
+                coins += east_city.count(self.effect["Receive coins"]["Condition"])
+        return coins
+
+    def reduced_trading_costs(self, west_city: City, east_city: City):
+        if "Trade" not in self.effect:
+            return []
+
+        resources = []
+        # TODO
+        for direction in self.effect["Trade"]["Directions"]:
+            if direction == "West":
+                resources += self.effect["Trade"]["Resources"]
+            if direction == "East":
+                resources += self.effect["Trade"]["Resources"]
+        return resources
+
+    def yield_resources(self):
+        return self.resource_yields
 
 #@dataclass
 class Card:

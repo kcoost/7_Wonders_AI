@@ -59,7 +59,6 @@
 {"Age": "III", "Name": "Palace", "N_players": 7, "Colour": "Blue", "Cost": {"Glass": 1, "Papyrus": 1, "Loom": 1, "Clay": 1, "Wood": 1, "Ore": 1, "Stone": 1}, "Chains": [], "Effect": {"Victory points": 8}}
 {"Age": "III", "Name": "Senate", "N_players": 3, "Colour": "Blue", "Cost": {"Ore": 1, "Stone": 1, "Wood": 2}, "Chains": ["Library"], "Effect": {"Victory points": 6}}
 {"Age": "III", "Name": "Senate", "N_players": 5, "Colour": "Blue", "Cost": {"Ore": 1, "Stone": 1, "Wood": 2}, "Chains": ["Library"], "Effect": {"Victory points": 6}}
-
 {"Age": "I", "Name": "Stockade", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 1}, "Chains": [], "Effect": {"Shields": 1}}
 {"Age": "I", "Name": "Stockade", "N_players": 7, "Colour": "Red", "Cost": {"Wood": 1}, "Chains": [], "Effect": {"Shields": 1}}
 {"Age": "I", "Name": "Barracks", "N_players": 3, "Colour": "Red", "Cost": {"Ore": 1}, "Chains": [], "Effect": {"Shields": 1}}
@@ -110,3 +109,33 @@
 {"Age": "III", "Name": "Academy", "N_players": 7, "Colour": "Green", "Cost": {"Stone": 3, "Glass": 1}, "Chains": ["School"], "Effect": {"Symbol": "Sextant"}}
 {"Age": "III", "Name": "Study", "N_players": 3, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1, "Loom": 1}, "Chains": ["School"], "Effect": {"Symbol": "Cogwheel"}}
 {"Age": "III", "Name": "Study", "N_players": 5, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1, "Loom": 1}, "Chains": ["School"], "Effect": {"Symbol": "Cogwheel"}}
+
+{"Age": "I", "Name": "Tavern", "N_players": 3, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 5}}}
+{"Age": "I", "Name": "Tavern", "N_players": 5, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 5}}}
+{"Age": "I", "Name": "Tavern", "N_players": 7, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 5}}}
+{"Age": "II", "Name": "Vineyard", "N_players": 3, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Brown", "Directions": ["West", "Self", "East"]}}}
+{"Age": "II", "Name": "Vineyard", "N_players": 6, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Brown", "Directions": ["West", "Self", "East"]}}}
+{"Age": "II", "Name": "Bazar", "N_players": 4, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 2, "Condition": "Grey", "Directions": ["West", "Self", "East"]}}}
+{"Age": "II", "Name": "Bazar", "N_players": 7, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Receive coins": {"Amount": 2, "Condition": "Grey", "Directions": ["West", "Self", "East"]}}}
+{"Age": "III", "Name": "Haven", "N_players": 3, "Colour": "Yellow", "Cost": {"Loom": 1, "Ore": 1, "Wood": 1}, "Chains": ["Forum"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Brown", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Brown", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Haven", "N_players": 4, "Colour": "Yellow", "Cost": {"Loom": 1, "Ore": 1, "Wood": 1}, "Chains": ["Forum"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Brown", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Brown", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Lighthouse", "N_players": 3, "Colour": "Yellow", "Cost": {"Glass": 1, "Stone": 1}, "Chains": ["Caravansery"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Yellow", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Yellow", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Lighthouse", "N_players": 6, "Colour": "Yellow", "Cost": {"Glass": 1, "Stone": 1}, "Chains": ["Caravansery"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Yellow", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Yellow", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Chamber of commerce", "N_players": 4, "Colour": "Yellow", "Cost": {"Clay": 2, "Papyrus": 1}, "Chains": [], "Effect": {"Receive coins": {"Amount": 2, "Condition": "Grey", "Directions": ["Self"]}, "Receive victory points": {"Amount": 2, "Condition": "Grey", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Chamber of commerce", "N_players": 6, "Colour": "Yellow", "Cost": {"Clay": 2, "Papyrus": 1}, "Chains": [], "Effect": {"Receive coins": {"Amount": 2, "Condition": "Grey", "Directions": ["Self"]}, "Receive victory points": {"Amount": 2, "Condition": "Grey", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Arena", "N_players": 3, "Colour": "Yellow", "Cost": {"Ore": 1, "Stone": 2}, "Chains": ["Dispensary"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Wonder", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Wonder", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Arena", "N_players": 5, "Colour": "Yellow", "Cost": {"Ore": 1, "Stone": 2}, "Chains": ["Dispensary"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Wonder", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Wonder", "Directions": ["Self"]}}}
+{"Age": "III", "Name": "Arena", "N_players": 7, "Colour": "Yellow", "Cost": {"Ore": 1, "Stone": 2}, "Chains": ["Dispensary"], "Effect": {"Receive coins": {"Amount": 1, "Condition": "Wonder", "Directions": ["Self"]}, "Receive victory points": {"Amount": 1, "Condition": "Wonder", "Directions": ["Self"]}}}
+{"Age": "I", "Name": "East trading post", "N_players": 3, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Trade": {"Resources": ["Clay", "Stone", "Wood", "Ore"], "Directions": ["East"]}}}
+{"Age": "I", "Name": "East trading post", "N_players": 7, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Trade": {"Resources": ["Clay", "Stone", "Wood", "Ore"], "Directions": ["East"]}}}
+{"Age": "I", "Name": "West trading post", "N_players": 3, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Trade": {"Resources": ["Clay", "Stone", "Wood", "Ore"], "Directions": ["West"]}}}
+{"Age": "I", "Name": "West trading post", "N_players": 7, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Trade": {"Resources": ["Clay", "Stone", "Wood", "Ore"], "Directions": ["West"]}}}
+{"Age": "I", "Name": "Marketplace", "N_players": 3, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Trade": {"Resources": ["Glass", "Loom", "Papyrus"], "Directions": ["West", "East"]}}}
+{"Age": "I", "Name": "Marketplace", "N_players": 6, "Colour": "Yellow", "Cost": {}, "Chains": [], "Effect": {"Trade": {"Resources": ["Glass", "Loom", "Papyrus"], "Directions": ["West", "East"]}}}
+{"Age": "I", "Name": "Forum", "N_players": 3, "Colour": "Yellow", "Cost": {"Clay": 2}, "Chains": ["East trading post", "West trading post"], "Effect": {"Yield resources": ["Loom", "Glass", "Papyrus"]}}
+{"Age": "I", "Name": "Forum", "N_players": 6, "Colour": "Yellow", "Cost": {"Clay": 2}, "Chains": ["East trading post", "West trading post"], "Effect": {"Yield resources": ["Loom", "Glass", "Papyrus"]}}
+{"Age": "I", "Name": "Forum", "N_players": 7, "Colour": "Yellow", "Cost": {"Clay": 2}, "Chains": ["East trading post", "West trading post"], "Effect": {"Yield resources": ["Loom", "Glass", "Papyrus"]}}
+{"Age": "I", "Name": "Caravansery", "N_players": 3, "Colour": "Yellow", "Cost": {"Wood": 2}, "Chains": ["Marketplace"], "Effect": {"Yield resources": ["Clay", "Stone", "Ore", "Wood"]}}
+{"Age": "I", "Name": "Caravansery", "N_players": 5, "Colour": "Yellow", "Cost": {"Wood": 2}, "Chains": ["Marketplace"], "Effect": {"Yield resources": ["Clay", "Stone", "Ore", "Wood"]}}
+{"Age": "I", "Name": "Caravansery", "N_players": 6, "Colour": "Yellow", "Cost": {"Wood": 2}, "Chains": ["Marketplace"], "Effect": {"Yield resources": ["Clay", "Stone", "Ore", "Wood"]}}
+{"Age": "I", "Name": "Caravansery", "N_players": 6, "Colour": "Yellow", "Cost": {"Wood": 2}, "Chains": ["Marketplace"], "Effect": {"Yield resources": ["Clay", "Stone", "Ore", "Wood"]}}
