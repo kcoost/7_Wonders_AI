@@ -85,3 +85,28 @@
 {"Age": "III", "Name": "Arsenal", "N_players": 7, "Colour": "Red", "Cost": {"Ore": 1, "Wood": 2, "Loom": 1}, "Chains": [], "Effect": {"Shields": 3}}
 {"Age": "III", "Name": "Siege workshop", "N_players": 3, "Colour": "Red", "Cost": {"Wood": 1, "Clay": 3}, "Chains": ["Laboratory"], "Effect": {"Shields": 3}}
 {"Age": "III", "Name": "Siege workshop", "N_players": 5, "Colour": "Red", "Cost": {"Wood": 1, "Clay": 3}, "Chains": ["Laboratory"], "Effect": {"Shields": 3}}
+
+{"Age": "I", "Name": "Apothecary", "N_players": 3, "Colour": "Green", "Cost": {"Loom": 1}, "Chains": [], "Effect": {"Symbol": "Sextant"}}
+{"Age": "I", "Name": "Apothecary", "N_players": 5, "Colour": "Green", "Cost": {"Loom": 1}, "Chains": [], "Effect": {"Symbol": "Sextant"}}
+{"Age": "I", "Name": "Workshop", "N_players": 3, "Colour": "Green", "Cost": {"Glass": 1}, "Chains": [], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "I", "Name": "Workshop", "N_players": 7, "Colour": "Green", "Cost": {"Glass": 1}, "Chains": [], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "I", "Name": "Scriptorium", "N_players": 3, "Colour": "Green", "Cost": {"Papyrus": 1}, "Chains": [], "Effect": {"Symbol": "Script"}}
+{"Age": "I", "Name": "Scriptorium", "N_players": 4, "Colour": "Green", "Cost": {"Papyrus": 1}, "Chains": [], "Effect": {"Symbol": "Script"}}
+{"Age": "II", "Name": "Dispensary", "N_players": 3, "Colour": "Green", "Cost": {"Ore": 2, "Glass": 1}, "Chains": ["Apothecary"], "Effect": {"Symbol": "Sextant"}}
+{"Age": "II", "Name": "Dispensary", "N_players": 4, "Colour": "Green", "Cost": {"Ore": 2, "Glass": 1}, "Chains": ["Apothecary"], "Effect": {"Symbol": "Sextant"}}
+{"Age": "II", "Name": "Laboratory", "N_players": 3, "Colour": "Green", "Cost": {"Clay": 2, "Papyrus": 1}, "Chains": ["Workshop"], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "II", "Name": "Laboratory", "N_players": 5, "Colour": "Green", "Cost": {"Clay": 2, "Papyrus": 1}, "Chains": ["Workshop"], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "II", "Name": "Library", "N_players": 3, "Colour": "Green", "Cost": {"Stone": 2, "Loom": 1}, "Chains": ["Scriptorium"], "Effect": {"Symbol": "Script"}}
+{"Age": "II", "Name": "Library", "N_players": 6, "Colour": "Green", "Cost": {"Stone": 2, "Loom": 1}, "Chains": ["Scriptorium"], "Effect": {"Symbol": "Script"}}
+{"Age": "II", "Name": "School", "N_players": 3, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1}, "Chains": [], "Effect": {"Symbol": "Script"}}
+{"Age": "II", "Name": "School", "N_players": 7, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1}, "Chains": [], "Effect": {"Symbol": "Script"}}
+{"Age": "III", "Name": "Lodge", "N_players": 3, "Colour": "Green", "Cost": {"Clay": 2, "Loom": 1, "Papyrus": 1}, "Chains": ["Dispensary"], "Effect": {"Symbol": "Sextant"}}
+{"Age": "III", "Name": "Lodge", "N_players": 6, "Colour": "Green", "Cost": {"Clay": 2, "Loom": 1, "Papyrus": 1}, "Chains": ["Dispensary"], "Effect": {"Symbol": "Sextant"}}
+{"Age": "III", "Name": "Observatory", "N_players": 3, "Colour": "Green", "Cost": {"Ore": 2, "Glass": 1, "Loom": 1}, "Chains": ["Laboratory"], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "III", "Name": "Observatory", "N_players": 7, "Colour": "Green", "Cost": {"Ore": 2, "Glass": 1, "Loom": 1}, "Chains": ["Laboratory"], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "III", "Name": "University", "N_players": 3, "Colour": "Green", "Cost": {"Wood": 2, "Papyrus": 1, "Glass": 1}, "Chains": ["Library"], "Effect": {"Symbol": "Script"}}
+{"Age": "III", "Name": "University", "N_players": 4, "Colour": "Green", "Cost": {"Wood": 2, "Papyrus": 1, "Glass": 1}, "Chains": ["Library"], "Effect": {"Symbol": "Script"}}
+{"Age": "III", "Name": "Academy", "N_players": 3, "Colour": "Green", "Cost": {"Stone": 3, "Glass": 1}, "Chains": ["School"], "Effect": {"Symbol": "Sextant"}}
+{"Age": "III", "Name": "Academy", "N_players": 7, "Colour": "Green", "Cost": {"Stone": 3, "Glass": 1}, "Chains": ["School"], "Effect": {"Symbol": "Sextant"}}
+{"Age": "III", "Name": "Study", "N_players": 3, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1, "Loom": 1}, "Chains": ["School"], "Effect": {"Symbol": "Cogwheel"}}
+{"Age": "III", "Name": "Study", "N_players": 5, "Colour": "Green", "Cost": {"Wood": 1, "Papyrus": 1, "Loom": 1}, "Chains": ["School"], "Effect": {"Symbol": "Cogwheel"}}

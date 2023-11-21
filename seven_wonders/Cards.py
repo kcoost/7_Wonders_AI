@@ -42,6 +42,12 @@ class RedCard(Card):
         self.shields = effect["Shields"]
         assert self.age == self.shields
 
+class GreenCard(Card):
+    colour = "Green"
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+        super().__init__(age, n_players, name, chains, cost)
+        self.symbol = effect["Symbol"]
+
 #@dataclass
 class Card:
     def __init__(self, name, age, cost, players):
