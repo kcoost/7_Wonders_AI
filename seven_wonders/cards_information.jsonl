@@ -1,34 +1,61 @@
-{"Age": "I", "Name": "Lumber yard", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1}}
-{"Age": "I", "Name": "Lumber yard", "N_players": 4, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1}}
-{"Age": "I", "Name": "Stone pit", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1}}
-{"Age": "I", "Name": "Stone pit", "N_players": 5, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1}}
-{"Age": "I", "Name": "Clay pool", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
-{"Age": "I", "Name": "Clay pool", "N_players": 5, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
-{"Age": "I", "Name": "Ore vein", "N_players": 3, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
-{"Age": "I", "Name": "Ore vein", "N_players": 4, "Colour": "Brown", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1}}
-{"Age": "I", "Name": "Tree farm", "N_players": 6, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1, "Clay": 1}}
-{"Age": "I", "Name": "Excavation", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1, "Clay": 1}}
-{"Age": "I", "Name": "Clay pit", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Clay": 1, "Ore": 1}}
-{"Age": "I", "Name": "Timber yard", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 1, "Wood": 1}}
-{"Age": "I", "Name": "Forest cave", "N_players": 5, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 1, "Ore": 1}}
-{"Age": "I", "Name": "Mine", "N_players": 6, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 1, "Stone": 1}}
-{"Age": "II", "Name": "Sawmill", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 2}}
-{"Age": "II", "Name": "Sawmill", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Wood": 2}}
-{"Age": "II", "Name": "Quarry", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 2}}
-{"Age": "II", "Name": "Quarry", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Stone": 2}}
-{"Age": "II", "Name": "Brickyard", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Clay": 2}}
-{"Age": "II", "Name": "Brickyard", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Clay": 2}}
-{"Age": "II", "Name": "Foundry", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 2}}
-{"Age": "II", "Name": "Foundry", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Prechain": {}, "Postchain": {}, "Effect": {"Ore": 2}}
-{"Age": "I", "Name": "Loom", "N_players": 3, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Loom": 1}}
-{"Age": "I", "Name": "Loom", "N_players": 6, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Loom": 1}}
-{"Age": "II", "Name": "Loom", "N_players": 3, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Loom": 1}}
-{"Age": "II", "Name": "Loom", "N_players": 5, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Loom": 1}}
-{"Age": "I", "Name": "Glassworks", "N_players": 3, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Glass": 1}}
-{"Age": "I", "Name": "Glassworks", "N_players": 6, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Glass": 1}}
-{"Age": "II", "Name": "Glassworks", "N_players": 3, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Glass": 1}}
-{"Age": "II", "Name": "Glassworks", "N_players": 5, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Glass": 1}}
-{"Age": "I", "Name": "Press", "N_players": 3, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Papyrus": 1}}
-{"Age": "I", "Name": "Press", "N_players": 6, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Papyrus": 1}}
-{"Age": "II", "Name": "Press", "N_players": 3, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Papyrus": 1}}
-{"Age": "II", "Name": "Press", "N_players": 5, "Colour": "Grey", "Cost": {}, "Prechain": {}, "Postchain": {}, "Effect": {"Papyrus": 1}}
+{"Age": "I", "Name": "Lumber yard", "N_players": 3, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Wood": 1}}
+{"Age": "I", "Name": "Lumber yard", "N_players": 4, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Wood": 1}}
+{"Age": "I", "Name": "Stone pit", "N_players": 3, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Stone": 1}}
+{"Age": "I", "Name": "Stone pit", "N_players": 5, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Stone": 1}}
+{"Age": "I", "Name": "Clay pool", "N_players": 3, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Clay pool", "N_players": 5, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Ore vein", "N_players": 3, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Ore vein", "N_players": 4, "Colour": "Brown", "Cost": {}, "Chains": [], "Effect": {"Ore": 1}}
+{"Age": "I", "Name": "Tree farm", "N_players": 6, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Wood": 1, "Clay": 1}}
+{"Age": "I", "Name": "Excavation", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Stone": 1, "Clay": 1}}
+{"Age": "I", "Name": "Clay pit", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Clay": 1, "Ore": 1}}
+{"Age": "I", "Name": "Timber yard", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Stone": 1, "Wood": 1}}
+{"Age": "I", "Name": "Forest cave", "N_players": 5, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Wood": 1, "Ore": 1}}
+{"Age": "I", "Name": "Mine", "N_players": 6, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Ore": 1, "Stone": 1}}
+{"Age": "II", "Name": "Sawmill", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Wood": 2}}
+{"Age": "II", "Name": "Sawmill", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Wood": 2}}
+{"Age": "II", "Name": "Quarry", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Stone": 2}}
+{"Age": "II", "Name": "Quarry", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Stone": 2}}
+{"Age": "II", "Name": "Brickyard", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Clay": 2}}
+{"Age": "II", "Name": "Brickyard", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Clay": 2}}
+{"Age": "II", "Name": "Foundry", "N_players": 3, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Ore": 2}}
+{"Age": "II", "Name": "Foundry", "N_players": 4, "Colour": "Brown", "Cost": {"Coin": 1}, "Chains": [], "Effect": {"Ore": 2}}
+{"Age": "I", "Name": "Loom", "N_players": 3, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Loom": 1}}
+{"Age": "I", "Name": "Loom", "N_players": 6, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Loom": 1}}
+{"Age": "II", "Name": "Loom", "N_players": 3, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Loom": 1}}
+{"Age": "II", "Name": "Loom", "N_players": 5, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Loom": 1}}
+{"Age": "I", "Name": "Glassworks", "N_players": 3, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Glass": 1}}
+{"Age": "I", "Name": "Glassworks", "N_players": 6, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Glass": 1}}
+{"Age": "II", "Name": "Glassworks", "N_players": 3, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Glass": 1}}
+{"Age": "II", "Name": "Glassworks", "N_players": 5, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Glass": 1}}
+{"Age": "I", "Name": "Press", "N_players": 3, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Papyrus": 1}}
+{"Age": "I", "Name": "Press", "N_players": 6, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Papyrus": 1}}
+{"Age": "II", "Name": "Press", "N_players": 3, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Papyrus": 1}}
+{"Age": "II", "Name": "Press", "N_players": 5, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Papyrus": 1}}
+{"Age": "I", "Name": "Pawnshop", "N_players": 4, "Colour": "Blue", "Cost": {}, "Chains": [], "Effect": {"Victory points": 3}}
+{"Age": "I", "Name": "Pawnshop", "N_players": 7, "Colour": "Blue", "Cost": {}, "Chains": [], "Effect": {"Victory points": 3}}
+{"Age": "I", "Name": "Baths", "N_players": 3, "Colour": "Blue", "Cost": {"Stone": 1}, "Chains": [], "Effect": {"Victory points": 3}}
+{"Age": "I", "Name": "Baths", "N_players": 7, "Colour": "Blue", "Cost": {"Stone": 1}, "Chains": [], "Effect": {"Victory points": 3}}
+{"Age": "I", "Name": "Altar", "N_players": 3, "Colour": "Blue", "Cost": {}, "Chains": [], "Effect": {"Victory points": 2}}
+{"Age": "I", "Name": "Altar", "N_players": 5, "Colour": "Blue", "Cost": {}, "Chains": [], "Effect": {"Victory points": 2}}
+{"Age": "I", "Name": "Theater", "N_players": 3, "Colour": "Blue", "Cost": {}, "Chains": [], "Effect": {"Victory points": 2}}
+{"Age": "I", "Name": "Theater", "N_players": 6, "Colour": "Blue", "Cost": {}, "Chains": [], "Effect": {"Victory points": 2}}
+{"Age": "II", "Name": "Aqueduct", "N_players": 3, "Colour": "Blue", "Cost": {"Stone": 3}, "Chains": ["Baths"], "Effect": {"Victory points": 5}}
+{"Age": "II", "Name": "Aqueduct", "N_players": 7, "Colour": "Blue", "Cost": {"Stone": 3}, "Chains": ["Baths"], "Effect": {"Victory points": 5}}
+{"Age": "II", "Name": "Temple", "N_players": 3, "Colour": "Blue", "Cost": {"Wood": 1, "Clay": 1, "Glass": 1}, "Chains": ["Altar"], "Effect": {"Victory points": 3}}
+{"Age": "II", "Name": "Temple", "N_players": 6, "Colour": "Blue", "Cost": {"Wood": 1, "Clay": 1, "Glass": 1}, "Chains": ["Altar"], "Effect": {"Victory points": 3}}
+{"Age": "II", "Name": "Statue", "N_players": 3, "Colour": "Blue", "Cost": {"Wood": 1, "Ore": 2}, "Chains": ["Theater"], "Effect": {"Victory points": 4}}
+{"Age": "II", "Name": "Statue", "N_players": 7, "Colour": "Blue", "Cost": {"Wood": 1, "Ore": 2}, "Chains": ["Theater"], "Effect": {"Victory points": 4}}
+{"Age": "II", "Name": "Courthouse", "N_players": 3, "Colour": "Blue", "Cost": {"Clay": 2, "Loom": 1}, "Chains": ["Scriptorium"], "Effect": {"Victory points": 4}}
+{"Age": "II", "Name": "Courthouse", "N_players": 5, "Colour": "Blue", "Cost": {"Clay": 2, "Loom": 1}, "Chains": ["Scriptorium"], "Effect": {"Victory points": 4}}
+{"Age": "III", "Name": "Pantheon", "N_players": 3, "Colour": "Blue", "Cost": {"Clay": 2, "Ore": 1, "Papyrus": 1, "Loom": 1, "Glass": 1}, "Chains": ["Temple"], "Effect": {"Victory points": 7}}
+{"Age": "III", "Name": "Pantheon", "N_players": 6, "Colour": "Blue", "Cost": {"Clay": 2, "Ore": 1, "Papyrus": 1, "Loom": 1, "Glass": 1}, "Chains": ["Temple"], "Effect": {"Victory points": 7}}
+{"Age": "III", "Name": "Gardens", "N_players": 3, "Colour": "Blue", "Cost": {"Wood": 1, "Clay": 2}, "Chains": ["Statue"], "Effect": {"Victory points": 5}}
+{"Age": "III", "Name": "Gardens", "N_players": 4, "Colour": "Blue", "Cost": {"Wood": 1, "Clay": 2}, "Chains": ["Statue"], "Effect": {"Victory points": 5}}
+{"Age": "III", "Name": "Town hall", "N_players": 3, "Colour": "Blue", "Cost": {"Glass": 1, "Ore": 1, "Stone": 2}, "Chains": [], "Effect": {"Victory points": 6}}
+{"Age": "III", "Name": "Town hall", "N_players": 5, "Colour": "Blue", "Cost": {"Glass": 1, "Ore": 1, "Stone": 2}, "Chains": [], "Effect": {"Victory points": 6}}
+{"Age": "III", "Name": "Town hall", "N_players": 6, "Colour": "Blue", "Cost": {"Glass": 1, "Ore": 1, "Stone": 2}, "Chains": [], "Effect": {"Victory points": 6}}
+{"Age": "III", "Name": "Palace", "N_players": 3, "Colour": "Blue", "Cost": {"Glass": 1, "Papyrus": 1, "Loom": 1, "Clay": 1, "Wood": 1, "Ore": 1, "Stone": 1}, "Chains": [], "Effect": {"Victory points": 8}}
+{"Age": "III", "Name": "Palace", "N_players": 7, "Colour": "Blue", "Cost": {"Glass": 1, "Papyrus": 1, "Loom": 1, "Clay": 1, "Wood": 1, "Ore": 1, "Stone": 1}, "Chains": [], "Effect": {"Victory points": 8}}
+{"Age": "III", "Name": "Senate", "N_players": 3, "Colour": "Blue", "Cost": {"Ore": 1, "Stone": 1, "Wood": 2}, "Chains": ["Library"], "Effect": {"Victory points": 6}}
+{"Age": "III", "Name": "Senate", "N_players": 5, "Colour": "Blue", "Cost": {"Ore": 1, "Stone": 1, "Wood": 2}, "Chains": ["Library"], "Effect": {"Victory points": 6}}

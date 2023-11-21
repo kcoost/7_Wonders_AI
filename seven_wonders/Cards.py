@@ -2,17 +2,19 @@ from typing import Any
 from common import *
 from dataclasses import dataclass
 from resources import Resources, Cost, Yield
+{"Age": "I", "Name": "Loom", "N_players": 6, "Colour": "Grey", "Cost": {}, "Chains": [], "Effect": {"Loom": 1}}
 
 class Card:
-    def __init__(self, name: str, age: str, cost: dict[str, int], n_players: int):
-        self.name = name
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int]):
         self.age = age
-        self.cost = Cost(**cost)
+        self.name = name
         self.n_players = n_players
+        self.cost = Cost(**cost)
+        self.chains = chains
 
 class ResourceCard(Card):
-    def __init__(self, name: str, age: str, cost: dict[str, int], n_players: int, effect: dict[str, int]):
-        super().__init__(name, age, cost, n_players)
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+        super().__init__(age, n_players, name, chains, cost)
 
         self.resource_yields = []
         for resource, quantity in effect.items():
@@ -27,6 +29,10 @@ class BrownCard(ResourceCard):
 class GreyCard(ResourceCard):
     colour = "Grey"
 
+class BlueCard(Card):
+    def __init__(self, age: str, n_players: int, name: str, chains: list[str], cost: dict[str, int], effect: dict[str, int]):
+        super().__init__(age, n_players, name, chains, cost)
+        self.victory_points = effect["Victory points"]
 
 
 #@dataclass
