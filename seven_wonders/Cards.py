@@ -10,9 +10,8 @@ class Card:
         self.cost = Cost(**cost)
         self.n_players = n_players
 
-class BrownCard(Card):
-    colour = "Brown"
-    def __init__(self, name: str, age: str, cost: dict[str, int], n_players: int, effect: dict[str, Any]):
+class ResourceCard(Card):
+    def __init__(self, name: str, age: str, cost: dict[str, int], n_players: int, effect: dict[str, int]):
         super().__init__(name, age, cost, n_players)
 
         self.resource_yields = []
@@ -22,6 +21,11 @@ class BrownCard(Card):
     def yield_resources(self):
         return self.resource_yields
 
+class BrownCard(ResourceCard):
+    colour = "Brown"
+
+class GreyCard(ResourceCard):
+    colour = "Grey"
 
 
 
