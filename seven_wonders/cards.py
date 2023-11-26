@@ -1,44 +1,18 @@
-from dataclasses import dataclass, asdict
 import torch
-from enum import Enum
+from dataclasses import dataclass, asdict
+from .resources import Cost
+from .effect import Effect
 
-class Action(Enum):
-    play_card: int = 0
-    stage_wonder: int = 1
-    discard: int = 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Play:
-    ...
-
-class PlayableCard(Enum):
-    pass
-
-class Cost(Enum):
-    pass
-
-class Trades(Enum):
-    pass
-
-class Action:
-    card: str
-    play: str
-
-
+COLOUR_MAP = {"brown": "\033[33m",
+              "grey": "\033[37m",
+              "blue": "\033[34m",
+              "red": "\033[31m",
+              "green": "\033[92m",
+              "yellow": "\033[1;33m",
+              "purple": "\033[35m"}
 
 @dataclass
-class AvailableCards:
+class CardList:
     Academy: bool = False
     Altar: bool = False
     Apothecary: bool = False
@@ -115,14 +89,34 @@ class AvailableCards:
     Workers_guild: bool = False
     Workshop: bool = False
 
-    def as_tensor(self):
-        return list(asdict(self).keys()), torch.Tensor(list(asdict(self).values()))
+    def __getitem__(self, idx: int):
+        return list(asdict(self).keys())[idx]
 
-class Plays:
-    play_card: bool = False
-    discard_card: bool = False
-    trade: bool = False
+    def to_tensor(self):
+        return torch.Tensor(list(asdict(self).values()))
 
-class ActionSpace:
-    available_cards = AvailableCards()
-    plays = Plays()
+class Card:
+    def __init__(
+        self,
+        age: str,
+        n_players: int,
+        name: str,
+        colour: str,
+        chains: list[str],
+        cost: dict[str, int],
+        effect: dict[str, dict]
+    ):
+        self.age = age
+        self.name = name
+        self.n_players = n_players
+        self.colour = colour
+        self.base_cost = Cost(**cost)
+        self.chains = chains
+        self.effect = Effect(**effect)
+
+    def __repr__(self):
+        return COLOUR_MAP[self.colour] + self.name
+
+    def cost(self, card_list: CardList):
+        # chain
+        return 0
