@@ -3,7 +3,7 @@ import jsonlines
 from pathlib import Path
 from .cards import Card
 
-random.seed(0)
+#random.seed(0)
 
 class Deck:
     def __init__(self, player_count: int, rotation_direction: str, cards: list[Card]):
@@ -33,13 +33,13 @@ def build_decks(player_count):
     purple_cards = []
     with jsonlines.open(Path(__file__).parent / "cards_information.jsonl") as file:
         for card_data in file:
-            if player_count > card_data["n_players"]:
+            if player_count < card_data["n_players"]:
                 continue
             if card_data["age"] == "I":
                 age_I_cards.append(Card(**card_data))
             elif card_data["age"] == "II":
                 age_II_cards.append(Card(**card_data))
-            elif card_data["colour"] == "Purple":
+            elif card_data["colour"] == "purple":
                 purple_cards.append(Card(**card_data))
             elif card_data["age"] == "III":
                 age_III_cards.append(Card(**card_data))

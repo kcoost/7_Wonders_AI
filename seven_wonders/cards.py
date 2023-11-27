@@ -117,6 +117,8 @@ class Card:
     def __repr__(self):
         return COLOUR_MAP[self.colour] + self.name
 
-    def cost(self, card_list: CardList):
-        # chain
-        return 0
+    def is_chained(self, card_list: CardList):
+        for card_name in asdict(card_list).keys():
+            if card_name in self.chains:
+                return True
+        return False

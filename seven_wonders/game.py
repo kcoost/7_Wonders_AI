@@ -13,6 +13,10 @@ class GameState:
         self.logger = GameLogger()
 
     def choose_plays(self, age: str):
+        probs_card = []
+        probs_action = []
+        rewards = []
+
         plays = []
 
         deck = getattr(self, f"deck_{age}")
@@ -21,33 +25,48 @@ class GameState:
             hand = hands[i]
             west_city_state = self.cities[(i + 1) % self.city_count].state
             east_city_state = self.cities[(i - 1) % self.city_count].state
-            play = self.cities[i].choose_play(hand, west_city_state, east_city_state)
+            play, prob_card, prob_action = self.cities[i].choose_play(hand, west_city_state, east_city_state)
 
             self.logger.choose_play(self.cities[i].name, play)
             plays.append(play)
-        return plays
+            if i == 0:
+                probs_card = prob_card
+                probs_action = prob_action
+                rewards = self.cities[i].victory_points(west_city_state, east_city_state)
+        return plays, probs_card, probs_action, rewards
 
     def play(self, plays: list[Play]):
         for i, play in enumerate(plays):
-            self.cities[i].play(play)
+            west_city_state = self.cities[(i + 1) % self.city_count].state
+            east_city_state = self.cities[(i - 1) % self.city_count].state
 
-    def military_battles(self):
+            coins = plays[(i + 1) % self.city_count].trade_east.coins + plays[(i - 1) % self.city_count].trade_west.coins - play.spent_coins
+            self.cities[i].play(play, west_city_state, east_city_state, coins)
+
+    def military_battles(self, age: str):
         for i in range(self.city_count):
             west_city_shields = self.cities[(i + 1) % self.city_count].shields
             east_city_shields = self.cities[(i - 1) % self.city_count].shields
-            results = self.cities[i].military_battle(west_city_shields, east_city_shields)
-            self.logger.military_battle(results)
+            results = self.cities[i].military_battle(age, west_city_shields, east_city_shields)
+            self.logger.military_battle(self.cities[i].name, results)
 
     def play_game(self):
+        probs_card = []
+        probs_action = []
+        rewards = []
+
         self.logger.start_game(self.cities)
 
         for age in ["I", "II", "III"]:
             self.logger.start_age(age)
 
-            for turn in range(1, 7):
+            for turn in range(1, 8):
                 self.logger.start_turn(turn)
 
-                plays = self.choose_plays(age)
+                plays, prob_card, prob_action, reward = self.choose_plays(age)
+                probs_card.append(prob_card)
+                probs_action.append(prob_action)
+                rewards.append(reward)
 
                 # update deck
                 getattr(self, f"deck_{age}").remove_cards([p.card.name for p in plays])
@@ -55,18 +74,19 @@ class GameState:
 
                 self.play(plays)
 
-            self.military_battles()
+            self.military_battles(age)
 
         winning_score = 0
         for i in range(self.city_count):
             west_city_state = self.cities[(i + 1) % self.city_count].state
             east_city_state = self.cities[(i - 1) % self.city_count].state
-            score = self.cities[i].military_battle(west_city_state, east_city_state)
+            score = self.cities[i].victory_points(west_city_state, east_city_state)
 
-            self.logger.game_results(winner, score)
+            self.logger.game_results(self.cities[i].name, score)
 
             if score > winning_score:
                 winning_score = score
                 winner = self.cities[i].name
 
-        self.logger.winner(winner)
+        self.logger.winner(winner, winning_score)
+        return winner, probs_card, probs_action, rewards

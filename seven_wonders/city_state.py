@@ -25,8 +25,8 @@ class CityState:
     # TODO make class?
     sextants: int = 0
     gears: int = 0
-    script: int = 0
-    any_symbol: int = 0
+    scripts: int = 0
+    any_symbols: int = 0
 
     n_military_defeat: int = 0
     military_result_I: int = 0

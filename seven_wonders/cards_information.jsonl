@@ -40,7 +40,7 @@
 {"age": "I", "name": "Guard tower", "n_players": 4, "colour": "red", "cost": {"clay": 1}, "chains": [], "effect": {"military": {"shields": 1}}}
 {"age": "II", "name": "Walls", "n_players": 3, "colour": "red", "cost": {"stone": 3}, "chains": [], "effect": {"military": {"shields": 2}}}
 {"age": "II", "name": "Walls", "n_players": 7, "colour": "red", "cost": {"stone": 3}, "chains": [], "effect": {"military": {"shields": 2}}}
-{"age": "II", "name": "Training ground", "n_players": 3, "colour": "red", "cost": {"wood": 1, "ore": 2}, "chains": [], "effect": {"military": {"shields": 2}}}
+{"age": "II", "name": "Training ground", "n_players": 4, "colour": "red", "cost": {"wood": 1, "ore": 2}, "chains": [], "effect": {"military": {"shields": 2}}}
 {"age": "II", "name": "Training ground", "n_players": 6, "colour": "red", "cost": {"wood": 1, "ore": 2}, "chains": [], "effect": {"military": {"shields": 2}}}
 {"age": "II", "name": "Training ground", "n_players": 7, "colour": "red", "cost": {"wood": 1, "ore": 2}, "chains": [], "effect": {"military": {"shields": 2}}}
 {"age": "II", "name": "Stables", "n_players": 3, "colour": "red", "cost": {"ore": 1, "clay": 1, "wood": 1}, "chains": ["Apothecary"], "effect": {"military": {"shields": 2}}}
@@ -108,7 +108,7 @@
 {"age": "III", "name": "Academy", "n_players": 7, "colour": "green", "cost": {"stone": 3, "glass": 1}, "chains": ["School"], "effect": {"science": {"symbol": "sextant"}}}
 {"age": "III", "name": "Study", "n_players": 3, "colour": "green", "cost": {"wood": 1, "papyrus": 1, "loom": 1}, "chains": ["School"], "effect": {"science": {"symbol": "gear"}}}
 {"age": "III", "name": "Study", "n_players": 5, "colour": "green", "cost": {"wood": 1, "papyrus": 1, "loom": 1}, "chains": ["School"], "effect": {"science": {"symbol": "gear"}}}
-{"age": "I", "name": "Tavern", "n_players": 3, "colour": "yellow", "cost": {}, "chains": [], "effect": {"receive_coins": {"amount": 5}}}
+{"age": "I", "name": "Tavern", "n_players": 4, "colour": "yellow", "cost": {}, "chains": [], "effect": {"receive_coins": {"amount": 5}}}
 {"age": "I", "name": "Tavern", "n_players": 5, "colour": "yellow", "cost": {}, "chains": [], "effect": {"receive_coins": {"amount": 5}}}
 {"age": "I", "name": "Tavern", "n_players": 7, "colour": "yellow", "cost": {}, "chains": [], "effect": {"receive_coins": {"amount": 5}}}
 {"age": "II", "name": "Vineyard", "n_players": 3, "colour": "yellow", "cost": {}, "chains": [], "effect": {"receive_coins": {"amount": 1, "condition": "brown", "directions": ["west", "self", "east"]}}}
@@ -130,13 +130,12 @@
 {"age": "I", "name": "West trading post", "n_players": 7, "colour": "yellow", "cost": {}, "chains": [], "effect": {"reduce_trade_cost": {"resources": ["clay", "stone", "wood", "ore"], "directions": ["west"]}}}
 {"age": "I", "name": "Marketplace", "n_players": 3, "colour": "yellow", "cost": {}, "chains": [], "effect": {"reduce_trade_cost": {"resources": ["glass", "loom", "papyrus"], "directions": ["west", "east"]}}}
 {"age": "I", "name": "Marketplace", "n_players": 6, "colour": "yellow", "cost": {}, "chains": [], "effect": {"reduce_trade_cost": {"resources": ["glass", "loom", "papyrus"], "directions": ["west", "east"]}}}
-{"age": "I", "name": "Forum", "n_players": 3, "colour": "yellow", "cost": {"clay": 2}, "chains": ["East trading post", "West trading post"], "effect": {"production": {"any_good": 1}}}
-{"age": "I", "name": "Forum", "n_players": 6, "colour": "yellow", "cost": {"clay": 2}, "chains": ["East trading post", "West trading post"], "effect": {"production": {"any_good": 1}}}
-{"age": "I", "name": "Forum", "n_players": 7, "colour": "yellow", "cost": {"clay": 2}, "chains": ["East trading post", "West trading post"], "effect": {"production": {"any_good": 1}}}
-{"age": "I", "name": "Caravansery", "n_players": 3, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
-{"age": "I", "name": "Caravansery", "n_players": 5, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
-{"age": "I", "name": "Caravansery", "n_players": 6, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
-{"age": "I", "name": "Caravansery", "n_players": 6, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
+{"age": "II", "name": "Forum", "n_players": 3, "colour": "yellow", "cost": {"clay": 2}, "chains": ["East trading post", "West trading post"], "effect": {"production": {"any_good": 1}}}
+{"age": "II", "name": "Forum", "n_players": 6, "colour": "yellow", "cost": {"clay": 2}, "chains": ["East trading post", "West trading post"], "effect": {"production": {"any_good": 1}}}
+{"age": "II", "name": "Forum", "n_players": 7, "colour": "yellow", "cost": {"clay": 2}, "chains": ["East trading post", "West trading post"], "effect": {"production": {"any_good": 1}}}
+{"age": "II", "name": "Caravansery", "n_players": 3, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
+{"age": "II", "name": "Caravansery", "n_players": 5, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
+{"age": "II", "name": "Caravansery", "n_players": 6, "colour": "yellow", "cost": {"wood": 2}, "chains": ["Marketplace"], "effect": {"production": {"any_raw_material": 1}}}
 {"age": "III", "name": "Workers guild", "n_players": 3, "colour": "purple", "cost": {"ore": 2, "clay": 1, "stone": 1, "wood": 1}, "chains": [], "effect": {"victory_points": {"amount": 1, "condition": "brown", "directions": ["west", "east"]}}}
 {"age": "III", "name": "Craftsmens guild", "n_players": 3, "colour": "purple", "cost": {"ore": 2, "stone": 2}, "chains": [], "effect": {"victory_points": {"amount": 2, "condition": "grey", "directions": ["west", "east"]}}}
 {"age": "III", "name": "Traders guild", "n_players": 3, "colour": "purple", "cost": {"loom": 1, "papyrus": 1, "glass": 1}, "chains": [], "effect": {"victory_points": {"amount": 1, "condition": "yellow", "directions": ["west", "east"]}}}

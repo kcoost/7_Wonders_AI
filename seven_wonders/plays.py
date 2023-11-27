@@ -8,7 +8,7 @@ class Action(Enum):
     discard: str = "discard"
 
 @dataclass
-class SingleTrade:
+class Trade:
     coins: int = 0
     clay: int = 0
     ore: int = 0
@@ -32,14 +32,17 @@ class SingleTrade:
 
         return ", ".join(texts) + f", costing {self.coins} coins"
 
-class Trade:
-    west: SingleTrade = SingleTrade()
-    east: SingleTrade = SingleTrade()
+# class Trade:
+#     west: SingleTrade = SingleTrade()
+#     east: SingleTrade = SingleTrade()
 
-    def __repr__(self):
-        return f"West trades: {self.west}\nEast trades: {self.east}"
+#     def __repr__(self):
+#         return f"West trades: {self.west}\nEast trades: {self.east}"
 
+@dataclass
 class Play:
     card: Card
-    trade: Trade
+    spent_coins: int
+    trade_west: Trade
+    trade_east: Trade
     action: Action
